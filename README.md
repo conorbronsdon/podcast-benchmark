@@ -55,12 +55,47 @@ it (`pip install PyYAML`) if you want a more robust parser.
 ## Usage
 
 ```bash
-python -m podcast_benchmark.cli config.example.yaml -o output
+python -m podcast_benchmark.cli benchmark config.example.yaml -o output
 ```
 
 This writes `output/benchmark.json` and `output/report.md`. Any source that
 fails for a show degrades to N/A and is listed in a warnings section, never
-dropped silently.
+dropped silently. The original invocation without the `benchmark` subcommand
+still works.
+
+## Sponsor intel
+
+**The caveat first: many sponsor reads are audio-only and never appear in
+episode descriptions. Absence of a detection is NOT absence of sponsorship.**
+Whatever this subcommand finds is a floor, not a census, and every name it
+extracts is a candidate that a human must confirm before acting on it.
+
+```bash
+python -m podcast_benchmark.cli sponsors config.example.yaml -o output
+```
+
+This scans every episode description and title each configured feed currently
+serves for sponsorship language and writes `output/sponsors.json` (raw, with
+verbatim evidence snippets) and `output/sponsors.md` (a ranked report). The
+point: companies currently buying ads on comparable shows are the
+highest-value sponsorship prospects, and that intel sits in public RSS.
+
+What it looks for:
+
+- Phrases: "sponsored by", "brought to you by", "thanks to our sponsor(s)",
+  "is supported by", "presented by", "partner:", "in partnership with".
+- Promo codes: "use code X", with the adjacent vendor domain when present.
+- UTM-tagged and shortener links, recorded per show as weak signals but never
+  aggregated into sponsor rows, because shows tag their own links too.
+
+Candidates are aggregated across shows: which shows carry a sponsor, how many
+episodes, first and last seen dates. The report ranks by show breadth and then
+recency, since those are the buying signals. Guards keep guest companies out:
+a company named in a description without sponsor phrasing is not extracted,
+and "supported by our listeners" style phrases are filtered.
+
+If a niche's descriptions yield few or no hits, that is the result the report
+states. The patterns are deliberately not loosened to manufacture rows.
 
 ### Podcast Index (optional)
 
@@ -110,7 +145,8 @@ See `config.example.yaml` for the full peer set used in `example-output/`.
 generated with read-only public GETs and committed so you can see actual
 results without running anything. It was produced without Podcast Index
 credentials, which is what a fresh clone gets, so the warnings show the
-graceful fallback.
+graceful fallback. `sponsors.json` and `sponsors.md` in the same directory
+are a real run of the sponsor-intel subcommand against the same config.
 
 ## How this feeds a /reports page
 
@@ -147,8 +183,11 @@ python -m pytest
 ```
 
 Tests mock all network access. They cover cadence and duration computation
-from a fixture feed, ranking with N/A handling, config parsing, and an
-end-to-end report build.
+from a fixture feed, ranking with N/A handling, config parsing, an
+end-to-end report build, and sponsor-intel extraction: every phrase pattern,
+name cleaning, multi-sponsor episodes, promo codes, false-positive guards
+(guest companies, "supported by our listeners"), cross-episode dedup, and
+per-feed degradation.
 
 ## License
 

@@ -1,0 +1,3283 @@
+{
+  "generated_at": "2026-06-11T07:55:06Z",
+  "tool_version": "0.2.0",
+  "subject": "Chain of Thought",
+  "shows": [
+    {
+      "name": "Chain of Thought",
+      "episodes_scanned": 62,
+      "episodes_with_mentions": 2,
+      "mention_hits": [
+        {
+          "episode_title": "How Block Deployed AI Agents to 12,000 Employees in 8 Weeks w/ MCP | Angie Jones",
+          "pubdate": "2026-01-21T12:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "presented_by",
+              "name": "Galileo AI Download Galileo's Mastering Multi-Agent Systems",
+              "normalized": "galileo ai download galileo s mastering multi agent systems",
+              "evidence": "nsdon Modular: https://www.modular.com/ Presented By: Galileo AI Download Galileo's Mastering Multi-Agent Systems for free here: https://galileo.ai/mastering-multi-agent-systems Topics Covered: - How"
+            }
+          ]
+        },
+        {
+          "episode_title": "Gemini 3 & Robot Dogs: Inside Google DeepMind's AI Experiments | Paige Bailey",
+          "pubdate": "2026-01-14T16:30:00+00:00",
+          "mentions": [
+            {
+              "kind": "presented_by",
+              "name": "Galileo",
+              "normalized": "galileo",
+              "evidence": "ps://www.linkedin.com/in/conorbronsdon/ Presented By: Galileo.ai Download Galileo's Mastering Multi-Agent Systems for free here!: https://galileo.ai/mastering-multi-agent-systems Topics Covered: - Gem"
+            }
+          ]
+        }
+      ],
+      "link_signals": {
+        "episodes_with_link_signals": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "Latent Space",
+      "episodes_scanned": 207,
+      "episodes_with_mentions": 8,
+      "mention_hits": [
+        {
+          "episode_title": "Latent.Space 2024 Year in Review",
+          "pubdate": "2024-12-31T20:46:31+00:00",
+          "mentions": [
+            {
+              "kind": "in_partnership_with",
+              "name": "Black Forest Labs as a",
+              "normalized": "black forest labs as a",
+              "evidence": "'s images were originally launched, uh, in partnership with Black Forest Labs as a, as a thin wrapper. [00:50:24] swyx: And then Grok was like, no, we'll make our own. And so they've made their own. I"
+            }
+          ]
+        },
+        {
+          "episode_title": "Generative Video WorldSim, Diffusion, Vision, Reinforcement Learning and Robotics \u2014 ICML 2024 Part 1",
+          "pubdate": "2024-12-10T00:52:55+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "DISCORDGANG",
+              "normalized": "discordgang",
+              "evidence": "ickets for those who are deciding now \u2014 use code DISCORDGANG if you need it. See you in Vancouver! We\u2019ve been sitting on our ICML recordings for a while (from today\u2019s first-ever SOLO guest cohost, Bri",
+              "code": "DISCORDGANG"
+            }
+          ]
+        },
+        {
+          "episode_title": "Bolt.new, Flow Engineering for Code Agents, and >$8m ARR in 2 months as a Claude Wrapper",
+          "pubdate": "2024-12-02T21:02:00+00:00",
+          "mentions": [
+            {
+              "kind": "in_partnership_with",
+              "name": "Google",
+              "normalized": "google",
+              "evidence": "ata of web container online. But swyx : in partnership with Google, right? swyx : Like Google actually had to help you get over the finish line with stuff. Eric : A hundred percent, because well, you"
+            }
+          ]
+        },
+        {
+          "episode_title": "The new Claude 3.5 Sonnet, Computer Use, and Building SOTA Agents \u2014 with Erik Schluntz, Anthropic",
+          "pubdate": "2024-11-28T17:43:31+00:00",
+          "mentions": [
+            {
+              "kind": "in_partnership_with",
+              "name": "OpenAI",
+              "normalized": "openai",
+              "evidence": "So SWE-Bench verified was actually made in partnership with OpenAI, and they hired humans to go review all these tasks and pick out a subset to try to remove any obstacle like this that would make the"
+            }
+          ]
+        },
+        {
+          "episode_title": "Presenting the AI Engineer World's Fair \u2014 with Sam Schillace, Deputy CTO of Microsoft",
+          "pubdate": "2024-03-29T15:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "GROUP",
+              "normalized": "group",
+              "evidence": "nts. If you purchase four more tickets, use the code GROUP, and one of those four tickets will be free. If you want to speak at the event CFP closes April 8th, so check out the link at ai. engineer, s",
+              "code": "GROUP"
+            }
+          ]
+        },
+        {
+          "episode_title": "Beating GPT-4 with Open Source LLMs \u2014 with Michael Royzen of Phind",
+          "pubdate": "2023-11-03T16:04:49+00:00",
+          "mentions": [
+            {
+              "kind": "in_partnership_with",
+              "name": "Decibel",
+              "normalized": "decibel",
+              "evidence": "e Launchpad , an AI-focused accelerator in partnership with Decibel . If you\u2019re an AI founder of enterprise early adopter, fill out this form and we\u2019ll be in touch with more details. We also have a lo"
+            }
+          ]
+        },
+        {
+          "episode_title": "RWKV: Reinventing RNNs for the Transformer Era \u2014 with Eugene Cheah of UIlicious",
+          "pubdate": "2023-08-30T16:04:19+00:00",
+          "mentions": [
+            {
+              "kind": "presented_by",
+              "name": "AutoGPT",
+              "normalized": "autogpt",
+              "evidence": "gineer Summit Expo has been announced , presented by AutoGPT (and future guest Toran Bruce-Richards !) Stay tuned for more updates on the Summit livestream and Latent Space University . This post was"
+            }
+          ]
+        },
+        {
+          "episode_title": "No Moat: Closed AI gets its Open Source wakeup call \u2014 ft. Simon Willison",
+          "pubdate": "2023-05-05T16:17:30+00:00",
+          "mentions": [
+            {
+              "kind": "sponsored_by",
+              "name": "OpenAI",
+              "normalized": "openai",
+              "evidence": "d bucks or something, but I, it's, it's sponsored by OpenAI, so I haven't, I haven't actually spent any real money. [00:43:08] swyx: What? That's [00:43:09] awesome. [00:43:10] Travis Fischer: Yeah. Y"
+            }
+          ]
+        }
+      ],
+      "link_signals": {
+        "episodes_with_link_signals": 207,
+        "examples": [
+          {
+            "episode_title": "Reality: The Final Eval \u2014 Lukas Petersson and Axel Backlund of Andon Labs",
+            "url": "https://www.latent.space/subscribe?utm_medium=podcast&#38;utm_campaign=CTA_2",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "\ud83d\udd2cScaling Past Informal AI - Carina Hong, Axiom Math",
+            "url": "https://www.latent.space/subscribe?utm_medium=podcast&#38;utm_campaign=CTA_2",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "\u26a1\ufe0fSatya Nadella: No Priors x Latent Space Crossover Special at Microsoft Build",
+            "url": "https://www.latent.space/p/agent-labs?utm_source=publication-search",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "\u26a1\ufe0fSatya Nadella: No Priors x Latent Space Crossover Special at Microsoft Build",
+            "url": "https://www.latent.space/subscribe?utm_medium=podcast&#38;utm_campaign=CTA_2",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "GitHub's plan for Agents \u2014 Kyle Daigle, GitHub",
+            "url": "https://www.latent.space/subscribe?utm_medium=podcast&#38;utm_campaign=CTA_2",
+            "reason": "utm"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Practical AI",
+      "episodes_scanned": 361,
+      "episodes_with_mentions": 21,
+      "mention_hits": [
+        {
+          "episode_title": "Mozart to Megadeth at CHRP",
+          "pubdate": "2024-12-19T16:30:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "ra \u2014 Go to eightsleep.com/changelog and use the code CHANGELOG. You can try it for free for 30 days - but we\u2019re confident you will not want to return it (we love ours). Once you experience AI-optimize",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "Sidekick is an AI Shopify expert",
+          "pubdate": "2024-12-11T22:15:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "ra \u2014 Go to eightsleep.com/changelog and use the code CHANGELOG. You can try it for free for 30 days - but we\u2019re confident you will not want to return it (we love ours). Once you experience AI-optimize",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "Creating tested, reliable AI applications",
+          "pubdate": "2024-11-13T19:30:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "ltra Go to eightsleep.com/changelog and use the code CHANGELOG. You can try it for free for 30 days - but we\u2019re confident you will not want to return it (we love ours). Once you experience AI-optimize",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI is changing the cybersecurity threat landscape",
+          "pubdate": "2024-11-05T19:40:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "PRACTICALAI",
+              "normalized": "practicalai",
+              "evidence": "l. Go to eightsleep.com/PRACTICALAI and use the code PRACTICALAI to get $350 off your very own Pod 4 Ultra. You can try it for free for 30 days - but we\u2019re confident you will not want to return it. On",
+              "code": "PRACTICALAI"
+            }
+          ]
+        },
+        {
+          "episode_title": "Towards high-quality (maybe synthetic) datasets",
+          "pubdate": "2024-10-09T13:30:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "PRACTICALAI",
+              "normalized": "practicalai",
+              "evidence": "l. Go to eightsleep.com/PRACTICALAI and use the code PRACTICALAI to get $350 off your very own Pod 4 Ultra. You can try it for free for 30 days - but we\u2019re confident you will not want to return it. On",
+              "code": "PRACTICALAI"
+            }
+          ]
+        },
+        {
+          "episode_title": "Understanding what's possible, doable & scalable",
+          "pubdate": "2024-10-03T15:45:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "PRACTICALAI",
+              "normalized": "practicalai",
+              "evidence": "l. Go to eightsleep.com/PRACTICALAI and use the code PRACTICALAI to get $350 off your very own Pod 4 Ultra. You can try it for free for 30 days - but we\u2019re confident you will not want to return it. On",
+              "code": "PRACTICALAI"
+            }
+          ]
+        },
+        {
+          "episode_title": "YOLOv9: Computer vision is alive and well",
+          "pubdate": "2024-03-06T17:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "uncements (and win swag along the way). Use the code CHANGELOG when you sign up to get $100 OFF the team plan. Typesense \u2013 Lightning fast, globally distributed Search-as-a-Service that runs in memory.",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "Trends in data labeling",
+          "pubdate": "2021-09-14T20:30:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "SHIPIT",
+              "normalized": "shipit",
+              "evidence": "ure. Try it today at signalwire.com and use code SHIPIT for $25 in developer credit. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experiences. Move beyond your cont",
+              "code": "SHIPIT"
+            }
+          ]
+        },
+        {
+          "episode_title": "Stellar inference speed via AutoNAS",
+          "pubdate": "2021-09-07T18:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "SHIPIT",
+              "normalized": "shipit",
+              "evidence": "ure. Try it today at signalwire.com and use code SHIPIT for $25 in developer credit. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experiences. Move beyond your cont",
+              "code": "SHIPIT"
+            }
+          ]
+        },
+        {
+          "episode_title": "Anaconda + Pyston and more",
+          "pubdate": "2021-09-01T14:40:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "SHIPIT",
+              "normalized": "shipit",
+              "evidence": "ure. Try it today at signalwire.com and use code SHIPIT for $25 in developer credit. The Brave Browser \u2013 Browse the web up to 8x faster than Chrome and Safari, block ads and trackers by default, and r",
+              "code": "SHIPIT"
+            }
+          ]
+        },
+        {
+          "episode_title": "Green AI \ud83c\udf32",
+          "pubdate": "2021-03-02T15:40:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "ght now. Click here to check it out and use code CHANGELOG for 20% off! Featuring: Roy Schwartz \u2013 Website , X Jesse Dodge \u2013 X Chris Benson \u2013 Website , GitHub , LinkedIn , X Daniel Whitenack \u2013 Website",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "The AI doc will see you now",
+          "pubdate": "2021-02-16T14:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "ght now. Click here to check it out and use code CHANGELOG for 20% off! Featuring: Elad Walach \u2013 LinkedIn , X Chris Benson \u2013 Website , GitHub , LinkedIn , X Show Notes: Aidoc | Website Aidoc Medical |",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "Cooking up synthetic data with Gretel",
+          "pubdate": "2021-02-02T16:15:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "ght now. Click here to check it out and use code CHANGELOG for 20% off! The Brave Browser \u2013 Browse the web up to 8x faster than Chrome and Safari, block ads and trackers by default, and reward your fa",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "The nose knows",
+          "pubdate": "2021-01-26T21:30:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "ght now. Click here to check it out and use code CHANGELOG for 20% off! Changelog++ \u2013 You love our content and you want to take it to the next level by showing your support. We\u2019ll take you closer to t",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "Accelerating ML innovation at MLCommons",
+          "pubdate": "2021-01-19T15:30:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG",
+              "normalized": "changelog",
+              "evidence": "ght now. Click here to check it out and use code CHANGELOG for 20% off! Featuring: David Kanter \u2013 GitHub , X Chris Benson \u2013 Website , GitHub , LinkedIn , X Daniel Whitenack \u2013 Website , GitHub , X Show",
+              "code": "CHANGELOG"
+            }
+          ]
+        },
+        {
+          "episode_title": "Learning about (Deep) Learning",
+          "pubdate": "2020-09-21T17:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CMINFDW20",
+              "normalized": "cminfdw20",
+              "evidence": "er 5-9, 2020 20% off for our listeners! Use code CMINFDW20 by 9/25 for additional 20% off NVIDIA Deep Learning Institute NVIDIA to Acquire Arm for $40 Billion NVIDIA Ampere Architecture GeForce RTX 30",
+              "code": "CMINFDW20"
+            }
+          ]
+        },
+        {
+          "episode_title": "When AI goes wrong",
+          "pubdate": "2020-09-14T22:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Go Time panelist Mat Ryer",
+              "normalized": "go time panelist mat ryer",
+              "evidence": "hing you need to build your next thing. Brought to you by Go Time panelist Mat Ryer. Try it out today! Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experiences. Mov"
+            }
+          ]
+        },
+        {
+          "episode_title": "Speech tech and Common Voice at Mozilla",
+          "pubdate": "2020-09-09T15:30:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Go Time panelist Mat Ryer",
+              "normalized": "go time panelist mat ryer",
+              "evidence": "hing you need to build your next thing. Brought to you by Go Time panelist Mat Ryer. Try it out today! Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experiences. Mov"
+            }
+          ]
+        },
+        {
+          "episode_title": "CTRL-labs lets you control machines with your mind",
+          "pubdate": "2019-04-30T11:05:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG20",
+              "normalized": "changelog20",
+              "evidence": ", architecture, and emerging languages. Use the code CHANGELOG20 to get 20% off Bronze, Silver, and Gold passes. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experi",
+              "code": "CHANGELOG20"
+            }
+          ]
+        },
+        {
+          "episode_title": "Deep Reinforcement Learning",
+          "pubdate": "2019-04-23T11:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG20",
+              "normalized": "changelog20",
+              "evidence": ", architecture, and emerging languages. Use the code CHANGELOG20 to get 20% off Bronze, Silver, and Gold passes. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experi",
+              "code": "CHANGELOG20"
+            }
+          ]
+        },
+        {
+          "episode_title": "Making the world a better place at the AI for Good Foundation",
+          "pubdate": "2019-04-15T19:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "CHANGELOG20",
+              "normalized": "changelog20",
+              "evidence": ", architecture, and emerging languages. Use the code CHANGELOG20 to get 20% off Bronze, Silver, and Gold passes. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experi",
+              "code": "CHANGELOG20"
+            }
+          ]
+        }
+      ],
+      "link_signals": {
+        "episodes_with_link_signals": 220,
+        "examples": [
+          {
+            "episode_title": "Rebooting Enterprise AI with MCP and Kubernetes",
+            "url": "https://stacklok.com/?utm_source=linkedin&amp;utm_medium=social&amp;utm_campaign=profile",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "AI at the Edge is a different operating environment",
+            "url": "https://www.edgeimpulse.com/ebooks/the-ultimate-guide-to-edge-ai?utm_medium=inbound&amp;utm_source=organic-social&amp;utm_campaign=40531789-Q22026_practicalai_podcast",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "AI at the Edge is a different operating environment",
+            "url": "https://www.edgeimpulse.com/ai-at-the-edge?utm_medium=inbound&amp;utm_source=organic-social&amp;utm_campaign=40531789-Q22026_practicalai_podcast",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "AI at the Edge is a different operating environment",
+            "url": "https://www.edgeimpulse.com/blog?utm_medium=inbound&amp;utm_source=organic-social&amp;utm_campaign=40531789-Q22026_practicalai_podcast",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "AI at the Edge is a different operating environment",
+            "url": "https://www.edgeimpulse.com/expert-led-trial?utm_medium=inbound&amp;utm_source=organic-social&amp;utm_campaign=40531789-Q22026_practicalai_podcast",
+            "reason": "utm"
+          }
+        ]
+      }
+    },
+    {
+      "name": "The TWIML AI Podcast",
+      "episodes_scanned": 787,
+      "episodes_with_mentions": 6,
+      "mention_hits": [
+        {
+          "episode_title": "ML Feature Store at Intuit with Srivathsan Canchi - #438",
+          "pubdate": "2020-12-16T20:14:07+00:00",
+          "mentions": [
+            {
+              "kind": "supported_by",
+              "name": "the Intuit machine learning platform across various teams",
+              "normalized": "the intuit machine learning platform across various teams",
+              "evidence": "athsan, we explore the focus areas that are supported by the Intuit machine learning platform across various teams, including QuickBooks and Mint, Turbotax, and Credit Karma, and his thoughts on why c"
+            }
+          ]
+        },
+        {
+          "episode_title": "Human-in-the-Loop AI for Emergency Response & More w/ Robert Munro - TWiML Talk #125",
+          "pubdate": "2018-04-05T16:07:28+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "TWIMLAI",
+              "normalized": "twimlai",
+              "evidence": "gure-eight.com/train-ai, and be sure to use code TWIMLAI for 30% off your registration! For those of you listening to this on or before April 6th, Figure Eight is offering an even better deal on event",
+              "code": "TWIMLAI"
+            }
+          ]
+        },
+        {
+          "episode_title": "A Linear-Time Kernel Goodness-of-Fit Test - NIPS Best Paper '17 - TWiML Talk #100",
+          "pubdate": "2018-01-24T17:08:29+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "TWIMLAI",
+              "normalized": "twimlai",
+              "evidence": ", and more! Definitely check it out and use the code TWIMLAI for 20% off of registration. The notes for this show can be found at twimlai.com/talk/100.",
+              "code": "TWIMLAI"
+            }
+          ]
+        },
+        {
+          "episode_title": "Solving Imperfect-Information Games with Tuomas Sandholm - NIPS \u201917 Best Paper - TWiML Talk #99",
+          "pubdate": "2018-01-22T17:38:56+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "TWIMLAI",
+              "normalized": "twimlai",
+              "evidence": ", and more! Definitely check it out and use the code TWIMLAI for 20% off of registration. The notes for this show can be found at twimlai.com/talk/99",
+              "code": "TWIMLAI"
+            }
+          ]
+        },
+        {
+          "episode_title": "Separating Vocals in Recorded Music at Spotify with Eric Humphrey - TWiML Talk #98",
+          "pubdate": "2018-01-19T16:07:51+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "TWIMLAI",
+              "normalized": "twimlai",
+              "evidence": ", and more! Definitely check it out and use the code TWIMLAI for 20% off of registration. The notes for this show can be found at twimlai.com/talk/98",
+              "code": "TWIMLAI"
+            }
+          ]
+        },
+        {
+          "episode_title": "Accelerating Deep Learning with Mixed Precision Arithmetic with Greg Diamos - TWiML Talk #97",
+          "pubdate": "2018-01-17T22:19:25+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "TWIMLAI",
+              "normalized": "twimlai",
+              "evidence": ", and more! Definitely check it out and use the code TWIMLAI for 20% off of registration.",
+              "code": "TWIMLAI"
+            }
+          ]
+        }
+      ],
+      "link_signals": {
+        "episodes_with_link_signals": 1,
+        "examples": [
+          {
+            "episode_title": "Offensive vs Defensive Data Science with Deep Varma - TWiML Talk #25",
+            "url": "http://bit.ly/2lrWlJZ",
+            "reason": "shortener"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Gradient Dissent",
+      "episodes_scanned": 137,
+      "episodes_with_mentions": 12,
+      "mention_hits": [
+        {
+          "episode_title": "AI\u2019s Future: Investment & Impact with Sarah Guo and Elad Gil",
+          "pubdate": "2024-01-18T16:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Revolutionizing AI Data Management with Jerry Liu, CEO of LlamaIndex",
+          "pubdate": "2024-01-04T16:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Bridging AI and Science: The Impact of Machine Learning on Material Innovation with Joe Spisak of Meta",
+          "pubdate": "2023-12-07T16:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Unlocking the Power of Language Models in Enterprise: A Deep Dive with Chris Van Pelt",
+          "pubdate": "2023-11-16T16:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "osts Lavanya Shukla and Caryn Marooney, brought to you by Weights & Biases. Be sure to click the subscribe button below, to keep your finger on the pulse of this fast-moving space and hear from other"
+            }
+          ]
+        },
+        {
+          "episode_title": "Providing Greater Access to LLMs with Brandon Duderstadt, Co-Founder and CEO of Nomic AI",
+          "pubdate": "2023-07-27T05:18:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Exploring PyTorch and Open-Source Communities with Soumith Chintala, VP/Fellow of Meta, Co-Creator of PyTorch",
+          "pubdate": "2023-07-13T17:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Advanced AI Accelerators and Processors with Andrew Feldman of Cerebras Systems",
+          "pubdate": "2023-06-22T05:15:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Enabling LLM-Powered Applications with Harrison Chase of LangChain",
+          "pubdate": "2023-06-01T05:20:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Deploying Autonomous Mobile Robots with Jean Marc Alkazzi at idealworks",
+          "pubdate": "2023-05-18T14:45:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "How EleutherAI Trains and Releases LLMs: Interview with Stella Biderman",
+          "pubdate": "2023-05-04T04:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Scaling LLMs and Accelerating Adoption with Aidan Gomez at Cohere",
+          "pubdate": "2023-04-20T04:05:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        },
+        {
+          "episode_title": "Neural Network Pruning and Training with Jonathan Frankle at MosaicML",
+          "pubdate": "2023-04-04T04:23:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Weights & Biases",
+              "normalized": "weights & biases",
+              "evidence": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+            }
+          ]
+        }
+      ],
+      "link_signals": {
+        "episodes_with_link_signals": 37,
+        "examples": [
+          {
+            "episode_title": "AI, autonomy, and the future of naval warfare with Captain Jon Haase, United States Navy",
+            "url": "https://bit.ly/45BCkYz",
+            "reason": "shortener"
+          },
+          {
+            "episode_title": "What\u2019s the path to AGI? A conversation with Turing Co-founder and CEO Jonathan Siddharth",
+            "url": "https://bit.ly/45BCkYz",
+            "reason": "shortener"
+          },
+          {
+            "episode_title": "Vercel\u2019s CEO & Founder Guillermo Rauch on the impact of AI on Web Development and Front End Engineering",
+            "url": "https://bit.ly/45BCkYz",
+            "reason": "shortener"
+          },
+          {
+            "episode_title": "Elevating ML Infrastructure with Modal Labs CEO Erik Bernhardsson",
+            "url": "https://bit.ly/45BCkYz",
+            "reason": "shortener"
+          },
+          {
+            "episode_title": "From No-Code to AI-Powered Apps with Airtable\u2019s Howie Liu",
+            "url": "https://bit.ly/45BCkYz",
+            "reason": "shortener"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AI Engineering Podcast",
+      "episodes_scanned": 79,
+      "episodes_with_mentions": 0,
+      "mention_hits": [],
+      "link_signals": {
+        "episodes_with_link_signals": 14,
+        "examples": [
+          {
+            "episode_title": "Solve The Cold Start Problem For Machine Learning By Letting Humans Teach The Computer With Aitomatic",
+            "url": "https://www.themachinelearningpodcast.com/predibase?utm_source=rss&amp;utm_medium=rss",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "Solve The Cold Start Problem For Machine Learning By Letting Humans Teach The Computer With Aitomatic",
+            "url": "https://www.linkedin.com/in/ctnguyen/?utm_source=rss&amp;utm_medium=rss",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "Solve The Cold Start Problem For Machine Learning By Letting Humans Teach The Computer With Aitomatic",
+            "url": "https://twitter.com/pentagoniac?utm_source=rss&amp;utm_medium=rss",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "Solve The Cold Start Problem For Machine Learning By Letting Humans Teach The Computer With Aitomatic",
+            "url": "https://scholar.google.com/citations?user=3KvkkfoAAAAJ&amp;utm_source=rss&amp;utm_medium=rss",
+            "reason": "utm"
+          },
+          {
+            "episode_title": "Solve The Cold Start Problem For Machine Learning By Letting Humans Teach The Computer With Aitomatic",
+            "url": "https://www.dataengineeringpodcast.com?utm_source=rss&amp;utm_medium=rss",
+            "reason": "utm"
+          }
+        ]
+      }
+    },
+    {
+      "name": "No Priors",
+      "episodes_scanned": 166,
+      "episodes_with_mentions": 0,
+      "mention_hits": [],
+      "link_signals": {
+        "episodes_with_link_signals": 1,
+        "examples": [
+          {
+            "episode_title": "Gaming as the Future of Education with Duolingo CEO Luis von Ahn",
+            "url": "http://bit.ly/3RQzny3",
+            "reason": "shortener"
+          }
+        ]
+      }
+    },
+    {
+      "name": "The Cognitive Revolution",
+      "episodes_scanned": 349,
+      "episodes_with_mentions": 82,
+      "mention_hits": [
+        {
+          "episode_title": "Inside Nathan's Second Brain: Daniel Miessler, Security Expert & Creator of PAI, Audits My AI Setup",
+          "pubdate": "2026-06-01T07:56:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNISM",
+              "normalized": "cognism",
+              "evidence": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Claude: Claude by Anthropic is an AI collaborator that understands your workflow and helps you tac",
+              "code": "COGNISM"
+            }
+          ]
+        },
+        {
+          "episode_title": "Your Biggest Lever: Designing your AI Career for Maximum Impact, with 80,000 Hours founder Ben Todd",
+          "pubdate": "2026-05-26T10:55:04+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNISM",
+              "normalized": "cognism",
+              "evidence": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Claude: Claude by Anthropic is an AI collaborator that understands your workflow and helps you tac",
+              "code": "COGNISM"
+            }
+          ]
+        },
+        {
+          "episode_title": "All Compute Is Food: Palisade's Jeffrey Ladish on AI Shutdown Resistance, Self-Replication & Ecology",
+          "pubdate": "2026-05-24T16:18:12+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNISM",
+              "normalized": "cognism",
+              "evidence": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Claude: Claude by Anthropic is an AI collaborator that understands your workflow and helps you tac",
+              "code": "COGNISM"
+            }
+          ]
+        },
+        {
+          "episode_title": "The Model Eats the Scaffolding: DeepMind's Logan Kilpatrick & Tulsee Doshi on 3.5 Flash, Omni & More",
+          "pubdate": "2026-05-20T16:19:14+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNISM",
+              "normalized": "cognism",
+              "evidence": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Roboflow: Roboflow is an end-to-end visual AI platform that lets you turn raw ideas into fully dep",
+              "code": "COGNISM"
+            }
+          ]
+        },
+        {
+          "episode_title": "Three Kinds of Software Survive: Tasklet's Andrew Lee on Competing to be a Horizontal Platform",
+          "pubdate": "2026-05-15T21:33:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNISM",
+              "normalized": "cognism",
+              "evidence": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Roboflow: Roboflow is an end-to-end visual AI platform that lets you turn raw ideas into fully dep",
+              "code": "COGNISM"
+            }
+          ]
+        },
+        {
+          "episode_title": "Milliseconds to Match: Criteo's AdTech AI & the Future of Commerce w/ Diarmuid Gill & Liva Ralaivola",
+          "pubdate": "2026-05-09T13:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNISM",
+              "normalized": "cognism",
+              "evidence": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Claude: Claude by Anthropic is an AI collaborator that understands your workflow and helps you tac",
+              "code": "COGNISM"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI in the AM: 99% off search, GPT-5.5 is \"clean\", model welfare analysis, & efficient analog compute",
+          "pubdate": "2026-04-26T13:44:56+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Does Learning Require Feeling? Cameron Berg on the latest AI Consciousness & Welfare Research",
+          "pubdate": "2026-04-23T15:32:01+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Vibe-Coding an Attention Firewall, w/ Steve Newman, creator of The Curve",
+          "pubdate": "2026-04-19T18:54:51+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (03:25) Special Sponsor (04:47) Building personal product",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Welcome to AI in the AM: RL for EE, Oversight w/out Nationalization, & the first AI-Run Retail Store",
+          "pubdate": "2026-04-15T14:07:41+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (07:57) Live stream kickoff (09:52) Sam Altman attacks (1",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "It's Crunch Time: Ajeya Cotra on RSI & AI-Powered AI Safety Work, from the 80,000 Hours Podcast",
+          "pubdate": "2026-04-11T19:54:54+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:17) AI inside safety plans (06:49) AGI growth expecta",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Calm AI for Crazy Days: Inside Granola's Design Philosophy, with co-founder Sam Stephenson",
+          "pubdate": "2026-04-08T20:49:34+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (03:52) Special Sponsor (05:52) Granola growth and users",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Training the AIs' Eyes: How Roboflow is Making the Real World Programmable, with CEO Joseph Nelson",
+          "pubdate": "2026-04-04T21:39:05+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Success without Dignity?  Nathan finds Hope Amidst Chaos, from The Intelligence Horizon Podcast",
+          "pubdate": "2026-04-01T09:39:10+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Scaling Intelligence Out: Cisco's Vision for the Internet of Cognition, with Vijoy Pandey",
+          "pubdate": "2026-03-25T11:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Your Agent's Self-Improving Swiss Army Knife: Composio CTO Karan Vaidya on Building Smart Tools",
+          "pubdate": "2026-03-22T20:34:31+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Zvi's Mic Works!  Recursive Self-Improvement, Live Player Analysis, Anthropic vs DoW +\u00a0More!",
+          "pubdate": "2026-03-19T19:39:37+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI Scouting Report: the Good, Bad, & Weird @ the Law & AI Certificate Program, by LexLab, UC Law SF",
+          "pubdate": "2026-03-16T22:32:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Bioinfohazards: Jassi Pannu on Controlling Dangerous Data from which AI Models Learn",
+          "pubdate": "2026-03-11T20:39:43+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (05:59) From outbreak to vaccine (17:08) Threat actors an",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Try this at Home: Jesse Genet on OpenClaw Agents for Homeschool & How to Live Your Best AI Life",
+          "pubdate": "2026-03-08T18:42:11+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:57) Homeschooling context and AI (15:55) Building an",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Don't Fight Backprop: Goodfire's Vision for Intentional Design, w/ Dan Balsam & Tom McGrath",
+          "pubdate": "2026-03-05T13:23:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai PRODUCED BY: https://aipodcast.ing",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Situational Awareness in Government, with UK AISI Chief Scientist Geoffrey Irving",
+          "pubdate": "2026-03-01T12:26:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:09) From physics to ML (08:52) AGI uncertainty and th",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Universal Medical Intelligence: OpenAI's Plan to Elevate Human Health, with Karan Singhal",
+          "pubdate": "2026-02-25T21:47:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (06:11) Cancer story and mission (11:46) Designing safe h",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Intelligence with Everyone: RL @ MiniMax, with Olive Song, from AIE NYC & Inference by Turing Post",
+          "pubdate": "2026-02-22T16:58:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:15) Minimax M2 presentation (Part 1) (17:59) Sponsors",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Mathematical Superintelligence: Harmonic's Vlad Tenev & Tudor Achim on IMO Gold & Theories of Everything",
+          "pubdate": "2026-02-18T12:09:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:58) Math as reasoning (Part 1) (15:22) Sponsors: Clau",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Approaching the AI Event Horizon? Part 2, w/ Abhi Mahajan, Helen Toner, Jeremie Harris, @8teAPi",
+          "pubdate": "2026-02-14T13:23:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Serval: Serval uses AI-powered automations to cut IT help desk tickets by more than 50%, free",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Approaching the AI Event Horizon? Part 1, w/ James Zou, Sam Hammond, Shoshannah Tekofsky, @8teAPi",
+          "pubdate": "2026-02-13T12:17:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Serval: Serval uses AI-powered automations to cut IT help desk tickets by more than 50%, free",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AGI-Pilled Cyber Defense: Automating Digital Forensics w/ Asymmetric Security Founder Alexis Carlier",
+          "pubdate": "2026-02-08T10:15:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Infinite Code Context: AI Coding at Enterprise Scale w/ Blitzy CEO Brian Elliott & CTO Sid Pardeshi",
+          "pubdate": "2026-02-05T16:09:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Serval: Serval uses AI-powered automations to cut IT help desk tickets by more than 50%, free",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "The AI-Powered Biohub: Why Mark Zuckerberg & Priscilla Chan are Investing in Data,\u00a0from Latent.Space",
+          "pubdate": "2026-02-01T15:10:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI & The Law: Changing Practice, Claude Constitution, & New Rights, w/ Kevin & Alan of Scaling Laws",
+          "pubdate": "2026-01-29T16:21:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "The Internet Computer: Caffeine.ai CEO Dominic Williams on Unstoppable, Self-Writing Software",
+          "pubdate": "2026-01-25T10:53:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AMA Part 2: Is Fine-Tuning Dead? How Am I Preparing for AGI? Are We Headed for UBI? & More!",
+          "pubdate": "2026-01-22T20:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Pioneering PAI: How Daniel Miessler's Personal AI Infrastructure Activates Human Agency & Creativity",
+          "pubdate": "2026-01-18T12:26:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Snowflake VP of AI Baris Gultekin on Bringing AI to Data, Agent Design, Text-2-SQL, RAG & More",
+          "pubdate": "2026-01-14T15:47:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AMA Part 1: Is Claude Code AGI?  Are we in a bubble?  Plus Live Player Analysis",
+          "pubdate": "2026-01-09T12:35:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Building & Scaling the AI Safety Research Community, with Ryan Kidd of MATS",
+          "pubdate": "2026-01-04T23:35:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, featuring conversa",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Confronting the Intelligence Curse, w/ Luke Drago of Workshop Labs, from the FLI Podcast",
+          "pubdate": "2026-01-01T18:33:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, featuring conversa",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Controlling Tools or Aligning Creatures? Emmett Shear (Softmax) & S\u00e9b Krier (GDM), from a16z Show",
+          "pubdate": "2025-12-27T23:36:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, featuring conversa",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "The Great Security Update: AI \u2227 Formal Methods with Kathleen Fisher of RAND & Byron Cook of AWS",
+          "pubdate": "2025-12-24T23:25:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, featuring conversa",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI 2025 \u2192 2026 Live Show | Part 2",
+          "pubdate": "2025-12-19T21:43:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNITIVE",
+              "normalized": "cognitive",
+              "evidence": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.",
+              "code": "COGNITIVE"
+            },
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) Sponsor: Gemini 3 in Google AI Studio (00:31) RAISE Act status (04:52) Cata",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI 2025 \u2192 2026 Live Show | Part 1",
+          "pubdate": "2025-12-18T21:55:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNITIVE",
+              "normalized": "cognitive",
+              "evidence": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.",
+              "code": "COGNITIVE"
+            },
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) Sponsor: Gemini 3 in Google AI Studio (00:31) Live show experiment (02:26)",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI's Energy & Water Demands: Sorting Fact from Fiction with Andy Masley",
+          "pubdate": "2025-12-14T16:11:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNITIVE",
+              "normalized": "cognitive",
+              "evidence": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, f",
+              "code": "COGNITIVE"
+            },
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Superintelligence: To Ban or Not to Ban? Max Tegmark & Dean Ball join Liron Shapira on Doom Debates",
+          "pubdate": "2025-12-10T15:10:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNITIVE",
+              "normalized": "cognitive",
+              "evidence": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, f",
+              "code": "COGNITIVE"
+            },
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Sovereign AI in Poland: Language Adaptation, Local Control & Cost Advantages with Marek Kozlowski",
+          "pubdate": "2025-12-06T11:47:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "China's AI Upstarts: How Z.ai Builds, Benchmarks & Ships in Hours, from ChinaTalk",
+          "pubdate": "2025-12-03T19:33:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Underwriting Superintelligence: How AIUC is using Insurance, Standards, and Audits to Accelerate Adoption while Minimizing Risks",
+          "pubdate": "2025-11-30T09:51:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "What AI Means for Students & Teachers: My Keynote from the Michigan Virtual AI Summit",
+          "pubdate": "2025-11-25T14:09:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Escaping AI Slop: How Atlassian Gives AI Teammates Taste, Knowledge, & Workflows, w- Sherif Mansour",
+          "pubdate": "2025-11-20T11:37:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGNITIVE",
+              "normalized": "cognitive",
+              "evidence": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Tasklet: Tasklet is an AI agent that automates your work 24/7; just describe",
+              "code": "COGNITIVE"
+            },
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI in the Cancer Journey: How I'm Using AI to Help My Son",
+          "pubdate": "2025-11-17T22:52:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "My Positive Vision for the AI Future, from the Existential Hope Podcast",
+          "pubdate": "2025-11-12T08:16:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai PRODUCED BY: https://aipodcast.ing CHAPTERS: (00:00) Sponsor: Google AI Studio (00:31) About",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "What is Catholic AI? Technology Meets Theology, with Matthew Harvey Sanders, CEO of Longbeard",
+          "pubdate": "2025-11-08T16:06:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "More Truthful AIs Report Conscious Experience: New Mechanistic Research w- Cameron Berg @ AE Studio",
+          "pubdate": "2025-11-05T20:51:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "A Simulationship with AI, with *smiles and kisses you* Star Chris Stokes & Director Bryan Carberry",
+          "pubdate": "2025-11-02T11:53:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Is AI Stalling Out? Cutting Through Capabilities Confusion, w/ Erik Torenberg, from the a16z Podcast",
+          "pubdate": "2025-10-29T15:24:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "A Positive Vision for the Future: Part 2 with Illia Polosukhin of NEAR",
+          "pubdate": "2025-10-25T15:42:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Always Bet on the Models: How Tasklet Puts the Agency in Agents, with CEO Andrew Lee",
+          "pubdate": "2025-10-22T12:05:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "aradigm of virtual employees. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Agent-first vs. workflow-first approach: Task Lit fundamenta"
+            },
+            {
+              "kind": "promo_code",
+              "name": "COGREV",
+              "normalized": "cogrev",
+              "evidence": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h",
+              "code": "COGREV"
+            }
+          ]
+        },
+        {
+          "episode_title": "Education in the AI Age: a Teacher Rethinks Learning & Purpose, w/ Johan Falk of Graspable AI",
+          "pubdate": "2025-10-08T21:29:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "ly advancing AI capabilities. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Three Purposes of Education: Education serves to supply work"
+            }
+          ]
+        },
+        {
+          "episode_title": "The Customer Service Revolution: Building Fin, with Eoghan McCabe & Fergal Reid of Intercom",
+          "pubdate": "2025-10-05T16:11:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "cing at $0.99 per resolution. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Sponsors: Linear: Linear is the system for modern product de"
+            }
+          ]
+        },
+        {
+          "episode_title": "Training an AI Scientist with Feedback from Reality, w- Liam Fedus & Ekin Dogus Cubuk (from a16z)",
+          "pubdate": "2025-10-02T10:26:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "&D in advanced manufacturing. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: \u2060https://notion.com/lp/nathan Core innovation: Periodic Labs is creating a \"physically gr"
+            }
+          ]
+        },
+        {
+          "episode_title": "The Machines Are Taking Our Jobs - Thank God? Emad Mostaque\u2019s Guide to the next 1000 Days",
+          "pubdate": "2025-09-28T15:27:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "her than just capital owners. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Read the full transcript: https://storage.aipodcast.ing/tran"
+            }
+          ]
+        },
+        {
+          "episode_title": "Stripe's Payments Foundation Model: How Data & Infra Create Compounding Advantage, w/ Emily Sands",
+          "pubdate": "2025-09-25T10:05:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Stripe's Scale: Processes $1.4 trillion annually, serving bo"
+            }
+          ]
+        },
+        {
+          "episode_title": "Full-Stack AI Safety: Why Defense-in-Depth Might Work, with Far.AI CEO Adam Gleave",
+          "pubdate": "2025-09-20T09:50:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: \u2060https://notion.com/lp/nathan Post-AGI Vision: Adam Gleave outlined a \"gradual disempower"
+            }
+          ]
+        },
+        {
+          "episode_title": "Can We Stop AI Deception? Apollo Research Tests OpenAI's Deliberative Alignment, w/ Marius Hobbhahn",
+          "pubdate": "2025-09-18T17:55:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Definition of AI Scheming: AI scheming is defined as \"covert"
+            }
+          ]
+        },
+        {
+          "episode_title": "User-Owned AI: On-Chain Training, Inference, and Agents, with NEAR's Illia Polosukhin",
+          "pubdate": "2025-09-13T16:55:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: \u2060https://notion.com/lp/nathan Evolution from AI to Blockchain: Near Protocol evolved from"
+            }
+          ]
+        },
+        {
+          "episode_title": "Coaching the Creators: Inside the Minds Building Frontier AI with Executive Coach Joe Hudson",
+          "pubdate": "2025-09-11T09:13:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Three-Level Coaching Approach: Joe Hudson coaches AI leaders"
+            }
+          ]
+        },
+        {
+          "episode_title": "Zvi Mowshowitz on Longer Timelines, RL-induced Doom, and Why China is Refusing H20s",
+          "pubdate": "2025-09-06T14:52:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Timeline Adjustment: Zvi has lengthened his AGI timelines be"
+            }
+          ]
+        },
+        {
+          "episode_title": "In-AI Advertising: Better Answers for Users, Big Questions for Society, with ZeroClick's Ryan Hudson",
+          "pubdate": "2025-09-03T21:40:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan ZeroClick's Evolution: Originally creators of Pi Ad Block, t"
+            }
+          ]
+        },
+        {
+          "episode_title": "Material Abundance: Radical AI\u2019s Closed-Loop Lab Automates Scientific Discovery",
+          "pubdate": "2025-08-30T19:41:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060\u2060\u2060\u2060\u2060\u2060\u2060\u2060\u2060https://\u2060\u2060notion.com/lp/nathan Material Development Challenges: Current material"
+            }
+          ]
+        },
+        {
+          "episode_title": "Untangling Neural Network Mechanisms: Goodfire's Lee Sharkey on Parameter-based Interpretability",
+          "pubdate": "2025-08-27T23:11:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060\u2060\u2060\u2060https://\u2060\u2060notion.com/lp/nathan Parameter vs. Activation Decomposition: Traditional int"
+            }
+          ]
+        },
+        {
+          "episode_title": "What if Humans Weaponize Superintelligence, w/ Tom Davidson, from Future of Life Institute Podcast",
+          "pubdate": "2025-08-23T09:37:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060https://\u2060\u2060notion.com/lp/nathan Three Primary AI Coup Enablement Methods: Tom Davidson ide"
+            }
+          ]
+        },
+        {
+          "episode_title": "The AI Whistleblower Initiative: Supporting AGI Insiders When It Matters Most, w/ founder Karl Koch",
+          "pubdate": "2025-08-20T18:11:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060\u2060\u2060\u2060https://\u2060\u2060notion.com/lp/nathan AI Whistleblower Initiative Origins: Founded by Karl Ko"
+            }
+          ]
+        },
+        {
+          "episode_title": "Autonomous Organizations: Vending Bench & Beyond, w/ Lukas Petersson & Axel Backlund of Andon Labs",
+          "pubdate": "2025-08-16T17:02:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060https://\u2060\u2060notion.com/lp/nathan Autonomous Organization Philosophy: Andon Labs believes th"
+            }
+          ]
+        },
+        {
+          "episode_title": "Dean W. Ball on America's AI Action Plan & 4 Months at the White House",
+          "pubdate": "2025-08-13T01:47:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at https://notion.com/lp/nathan White House Experience & Government Role: Dean Ball served as"
+            }
+          ]
+        },
+        {
+          "episode_title": "Jake Sullivan on Navigating AI Uncertainty and Managing Competition with China",
+          "pubdate": "2025-08-09T15:24:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at https://notion.com/lp/nathan Four-Category Framework: Sullivan organizes his thinking abou"
+            }
+          ]
+        },
+        {
+          "episode_title": "Sovereign AI: Geopolitical Strategy & Industrial Policy for Countries 3-193, with Anjney Midha, a16z",
+          "pubdate": "2025-08-06T11:43:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Notion AI Meeting Notes",
+              "normalized": "notion ai meeting notes",
+              "evidence": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at https://notion.com/lp/nathan What is Sovereign AI? Varies by stakeholder - for enterprises"
+            }
+          ]
+        },
+        {
+          "episode_title": "Designing the Future: Inside Canva's AI Strategy with John Milinovich, GenAI Product Lead at Canva",
+          "pubdate": "2024-11-23T16:20:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "REVOLUTION",
+              "normalized": "revolution",
+              "evidence": "e your personal data back with Incogni! Use code REVOLUTION at the link below and get 60% off an annual plan: https://incogni.com/revolution Shopify: Shopify is the world's leading e-commerce platform",
+              "code": "REVOLUTION"
+            }
+          ]
+        },
+        {
+          "episode_title": "Everything You Wanted to Know About LLM Post-Training, with Nathan Lambert of Allen Institute for AI",
+          "pubdate": "2024-11-21T17:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "promo_code",
+              "name": "REVOLUTION",
+              "normalized": "revolution",
+              "evidence": "e your personal data back with Incogni! Use code REVOLUTION at the link below and get 60% off an annual plan: https://incogni.com/revolution Notion: Notion offers powerful workflow and automation temp",
+              "code": "REVOLUTION"
+            }
+          ]
+        },
+        {
+          "episode_title": "OpenAI DevDay: Beyond the Headlines with Logan Kilpatrick, OpenAI's Dev Relations Lead",
+          "pubdate": "2023-11-08T01:50:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "the Turpentine Media network",
+              "normalized": "the turpentine media network",
+              "evidence": "ar from now The Cognitive Revolution is brought to you by the Turpentine Media network. Producer: Vivian Meng Executive Producers: Amelia Salyers, and Erik Torenberg Editor: Graham Bessellieu For inqu"
+            }
+          ]
+        },
+        {
+          "episode_title": "AI is Supercharging Writers with Sudowrite's Founder, James Yu",
+          "pubdate": "2023-10-10T07:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "the Turpentine Media network",
+              "normalized": "the turpentine media network",
+              "evidence": "Midjourney The Cognitive Revolution is brought to you by the Turpentine Media network. Producer: Vivian Meng Executive Producers: Amelia Salyers, and Erik Torenberg Editor: Graham Bessellieu For inqu"
+            }
+          ]
+        },
+        {
+          "episode_title": "Gunning for Google with Perplexity CEO Aravind Srinivas",
+          "pubdate": "2023-10-03T07:00:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "the Turpentine Media network",
+              "normalized": "the turpentine media network",
+              "evidence": "al activity The Cognitive Revolution is brought to you by the Turpentine Media network. Producer: Vivian Meng Executive Producers: Amelia Salyers, and Erik Torenberg Editor: Graham Bessellieu For inqu"
+            }
+          ]
+        },
+        {
+          "episode_title": "E43: AI Scouting Report \u2013 Part 1 of 3: Fundamentals [Bonus YouTube Episode]",
+          "pubdate": "2023-07-06T16:46:00+00:00",
+          "mentions": [
+            {
+              "kind": "brought_to_you_by",
+              "name": "Athena",
+              "normalized": "athena",
+              "evidence": "inutes. This special episode is in part brought to you by Athena. You can use Nathan\u2019s referral link (http://athenago.me/nathan-labenz) for a free first month of Athena services for qualified customer"
+            }
+          ]
+        }
+      ],
+      "link_signals": {
+        "episodes_with_link_signals": 94,
+        "examples": [
+          {
+            "episode_title": "Don't Fight Backprop: Goodfire's Vision for Intentional Design, w/ Dan Balsam & Tom McGrath",
+            "url": "https://bit.ly/granolablindspot",
+            "reason": "shortener"
+          },
+          {
+            "episode_title": "Situational Awareness in Government, with UK AISI Chief Scientist Geoffrey Irving",
+            "url": "https://bit.ly/granolablindspot\u2060",
+            "reason": "shortener"
+          },
+          {
+            "episode_title": "Universal Medical Intelligence: OpenAI's Plan to Elevate Human Health, with Karan Singhal",
+            "url": "https://bit.ly/granolablindspot\u2060",
+            "reason": "shortener"
+          },
+          {
+            "episode_title": "Intelligence with Everyone: RL @ MiniMax, with Olive Song, from AIE NYC & Inference by Turing Post",
+            "url": "https://bit.ly/granolablindspot\u2060",
+            "reason": "shortener"
+          },
+          {
+            "episode_title": "Mathematical Superintelligence: Harmonic's Vlad Tenev & Tudor Achim on IMO Gold & Theories of Everything",
+            "url": "https://bit.ly/granolablindspot\u2060",
+            "reason": "shortener"
+          }
+        ]
+      }
+    }
+  ],
+  "sponsors": [
+    {
+      "name": "COGNISM",
+      "normalized": "cognism",
+      "shows": [
+        "The Cognitive Revolution"
+      ],
+      "episode_count": 6,
+      "first_seen": "2026-05-09",
+      "last_seen": "2026-06-01",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Inside Nathan's Second Brain: Daniel Miessler, Security Expert & Creator of PAI, Audits My AI Setup",
+          "date": "2026-06-01",
+          "kind": "promo_code",
+          "snippet": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Claude: Claude by Anthropic is an AI collaborator that understands your workflow and helps you tac"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Your Biggest Lever: Designing your AI Career for Maximum Impact, with 80,000 Hours founder Ben Todd",
+          "date": "2026-05-26",
+          "kind": "promo_code",
+          "snippet": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Claude: Claude by Anthropic is an AI collaborator that understands your workflow and helps you tac"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "All Compute Is Food: Palisade's Jeffrey Ladish on AI Shutdown Resistance, Self-Replication & Ecology",
+          "date": "2026-05-24",
+          "kind": "promo_code",
+          "snippet": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Claude: Claude by Anthropic is an AI collaborator that understands your workflow and helps you tac"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "The Model Eats the Scaffolding: DeepMind's Logan Kilpatrick & Tulsee Doshi on 3.5 Flash, Omni & More",
+          "date": "2026-05-20",
+          "kind": "promo_code",
+          "snippet": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Roboflow: Roboflow is an end-to-end visual AI platform that lets you turn raw ideas into fully dep"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Three Kinds of Software Survive: Tasklet's Andrew Lee on Competing to be a Horizontal Platform",
+          "date": "2026-05-15",
+          "kind": "promo_code",
+          "snippet": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Roboflow: Roboflow is an end-to-end visual AI platform that lets you turn raw ideas into fully dep"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Milliseconds to Match: Criteo's AdTech AI & the Future of Commerce w/ Diarmuid Gill & Liva Ralaivola",
+          "date": "2026-05-09",
+          "kind": "promo_code",
+          "snippet": "blic demo at https://sequencehq.com and use code COGNISM in the source field to save 20% off year one Claude: Claude by Anthropic is an AI collaborator that understands your workflow and helps you tac"
+        }
+      ]
+    },
+    {
+      "name": "COGREV",
+      "normalized": "cogrev",
+      "shows": [
+        "The Cognitive Revolution"
+      ],
+      "episode_count": 51,
+      "first_seen": "2025-10-22",
+      "last_seen": "2026-04-26",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI in the AM: 99% off search, GPT-5.5 is \"clean\", model welfare analysis, & efficient analog compute",
+          "date": "2026-04-26",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Does Learning Require Feeling? Cameron Berg on the latest AI Consciousness & Welfare Research",
+          "date": "2026-04-23",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Vibe-Coding an Attention Firewall, w/ Steve Newman, creator of The Curve",
+          "date": "2026-04-19",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (03:25) Special Sponsor (04:47) Building personal product"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Welcome to AI in the AM: RL for EE, Oversight w/out Nationalization, & the first AI-Run Retail Store",
+          "date": "2026-04-15",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (07:57) Live stream kickoff (09:52) Sam Altman attacks (1"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "It's Crunch Time: Ajeya Cotra on RSI & AI-Powered AI Safety Work, from the 80,000 Hours Podcast",
+          "date": "2026-04-11",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:17) AI inside safety plans (06:49) AGI growth expecta"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Calm AI for Crazy Days: Inside Granola's Design Philosophy, with co-founder Sam Stephenson",
+          "date": "2026-04-08",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (03:52) Special Sponsor (05:52) Granola growth and users"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Training the AIs' Eyes: How Roboflow is Making the Real World Programmable, with CEO Joseph Nelson",
+          "date": "2026-04-04",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Success without Dignity?  Nathan finds Hope Amidst Chaos, from The Intelligence Horizon Podcast",
+          "date": "2026-04-01",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Scaling Intelligence Out: Cisco's Vision for the Internet of Cognition, with Vijoy Pandey",
+          "date": "2026-03-25",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Your Agent's Self-Improving Swiss Army Knife: Composio CTO Karan Vaidya on Building Smart Tools",
+          "date": "2026-03-22",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Zvi's Mic Works!  Recursive Self-Improvement, Live Player Analysis, Anthropic vs DoW +\u00a0More!",
+          "date": "2026-03-19",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI Scouting Report: the Good, Bad, & Weird @ the Law & AI Certificate Program, by LexLab, UC Law SF",
+          "date": "2026-03-16",
+          "kind": "promo_code",
+          "snippet": "agent in one click.Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai VCX: VCX, by Fundrise, is the public ticker for private tech, giving everyday investors acces"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Bioinfohazards: Jassi Pannu on Controlling Dangerous Data from which AI Models Learn",
+          "date": "2026-03-11",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (05:59) From outbreak to vaccine (17:08) Threat actors an"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Try this at Home: Jesse Genet on OpenClaw Agents for Homeschool & How to Live Your Best AI Life",
+          "date": "2026-03-08",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:57) Homeschooling context and AI (15:55) Building an"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Don't Fight Backprop: Goodfire's Vision for Intentional Design, w/ Dan Balsam & Tom McGrath",
+          "date": "2026-03-05",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai PRODUCED BY: https://aipodcast.ing"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Situational Awareness in Government, with UK AISI Chief Scientist Geoffrey Irving",
+          "date": "2026-03-01",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:09) From physics to ML (08:52) AGI uncertainty and th"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Universal Medical Intelligence: OpenAI's Plan to Elevate Human Health, with Karan Singhal",
+          "date": "2026-02-25",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (06:11) Cancer story and mission (11:46) Designing safe h"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Intelligence with Everyone: RL @ MiniMax, with Olive Song, from AIE NYC & Inference by Turing Post",
+          "date": "2026-02-22",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:15) Minimax M2 presentation (Part 1) (17:59) Sponsors"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Mathematical Superintelligence: Harmonic's Vlad Tenev & Tudor Achim on IMO Gold & Theories of Everything",
+          "date": "2026-02-18",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) About the Episode (04:58) Math as reasoning (Part 1) (15:22) Sponsors: Clau"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Approaching the AI Event Horizon? Part 2, w/ Abhi Mahajan, Helen Toner, Jeremie Harris, @8teAPi",
+          "date": "2026-02-14",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Serval: Serval uses AI-powered automations to cut IT help desk tickets by more than 50%, free"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Approaching the AI Event Horizon? Part 1, w/ James Zou, Sam Hammond, Shoshannah Tekofsky, @8teAPi",
+          "date": "2026-02-13",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Serval: Serval uses AI-powered automations to cut IT help desk tickets by more than 50%, free"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AGI-Pilled Cyber Defense: Automating Digital Forensics w/ Asymmetric Security Founder Alexis Carlier",
+          "date": "2026-02-08",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Infinite Code Context: AI Coding at Enterprise Scale w/ Blitzy CEO Brian Elliott & CTO Sid Pardeshi",
+          "date": "2026-02-05",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Serval: Serval uses AI-powered automations to cut IT help desk tickets by more than 50%, free"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "The AI-Powered Biohub: Why Mark Zuckerberg & Priscilla Chan are Investing in Data,\u00a0from Latent.Space",
+          "date": "2026-02-01",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI & The Law: Changing Practice, Claude Constitution, & New Rights, w/ Kevin & Alan of Scaling Laws",
+          "date": "2026-01-29",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "The Internet Computer: Caffeine.ai CEO Dominic Williams on Unstoppable, Self-Writing Software",
+          "date": "2026-01-25",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AMA Part 2: Is Fine-Tuning Dead? How Am I Preparing for AGI? Are We Headed for UBI? & More!",
+          "date": "2026-01-22",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Pioneering PAI: How Daniel Miessler's Personal AI Infrastructure Activates Human Agency & Creativity",
+          "date": "2026-01-18",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Snowflake VP of AI Baris Gultekin on Bringing AI to Data, Agent Design, Text-2-SQL, RAG & More",
+          "date": "2026-01-14",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AMA Part 1: Is Claude Code AGI?  Are we in a bubble?  Plus Live Player Analysis",
+          "date": "2026-01-09",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Claude Claude is the AI collaborator that understands your entire workflow, from drafting and"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Building & Scaling the AI Safety Research Community, with Ryan Kidd of MATS",
+          "date": "2026-01-04",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, featuring conversa"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Confronting the Intelligence Curse, w/ Luke Drago of Workshop Labs, from the FLI Podcast",
+          "date": "2026-01-01",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, featuring conversa"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Controlling Tools or Aligning Creatures? Emmett Shear (Softmax) & S\u00e9b Krier (GDM), from a16z Show",
+          "date": "2025-12-27",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, featuring conversa"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "The Great Security Update: AI \u2227 Formal Methods with Kathleen Fisher of RAND & Byron Cook of AWS",
+          "date": "2025-12-24",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, featuring conversa"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI 2025 \u2192 2026 Live Show | Part 2",
+          "date": "2025-12-19",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) Sponsor: Gemini 3 in Google AI Studio (00:31) RAISE Act status (04:52) Cata"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI 2025 \u2192 2026 Live Show | Part 1",
+          "date": "2025-12-18",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai CHAPTERS: (00:00) Sponsor: Gemini 3 in Google AI Studio (00:31) Live show experiment (02:26)"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI's Energy & Water Demands: Sorting Fact from Fiction with Andy Masley",
+          "date": "2025-12-14",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Superintelligence: To Ban or Not to Ban? Max Tegmark & Dean Ball join Liron Shapira on Doom Debates",
+          "date": "2025-12-10",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Sovereign AI in Poland: Language Adaptation, Local Control & Cost Advantages with Marek Kozlowski",
+          "date": "2025-12-06",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "China's AI Upstarts: How Z.ai Builds, Benchmarks & Ships in Hours, from ChinaTalk",
+          "date": "2025-12-03",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Underwriting Superintelligence: How AIUC is using Insurance, Standards, and Audits to Accelerate Adoption while Minimizing Risks",
+          "date": "2025-11-30",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "What AI Means for Students & Teachers: My Keynote from the Michigan Virtual AI Summit",
+          "date": "2025-11-25",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Escaping AI Slop: How Atlassian Gives AI Teammates Taste, Knowledge, & Workflows, w- Sherif Mansour",
+          "date": "2025-11-20",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI in the Cancer Journey: How I'm Using AI to Help My Son",
+          "date": "2025-11-17",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Shopify: Shopify powers millions of businesses worldwide, handling 10% of U.S. e-commerce. Wi"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "My Positive Vision for the AI Future, from the Existential Hope Podcast",
+          "date": "2025-11-12",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai PRODUCED BY: https://aipodcast.ing CHAPTERS: (00:00) Sponsor: Google AI Studio (00:31) About"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "What is Catholic AI? Technology Meets Theology, with Matthew Harvey Sanders, CEO of Longbeard",
+          "date": "2025-11-08",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "More Truthful AIs Report Conscious Experience: New Mechanistic Research w- Cameron Berg @ AE Studio",
+          "date": "2025-11-05",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "A Simulationship with AI, with *smiles and kisses you* Star Chris Stokes & Director Bryan Carberry",
+          "date": "2025-11-02",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Is AI Stalling Out? Cutting Through Capabilities Confusion, w/ Erik Torenberg, from the a16z Podcast",
+          "date": "2025-10-29",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "A Positive Vision for the Future: Part 2 with Illia Polosukhin of NEAR",
+          "date": "2025-10-25",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Always Bet on the Models: How Tasklet Puts the Agency in Agents, with CEO Andrew Lee",
+          "date": "2025-10-22",
+          "kind": "promo_code",
+          "snippet": "gets the job done. Try it for free and use code COGREV for 50% off your first month at https://tasklet.ai Linear: Linear is the system for modern product development. Nearly every AI company you've h"
+        }
+      ]
+    },
+    {
+      "name": "Galileo AI Download Galileo's Mastering Multi-Agent Systems",
+      "normalized": "galileo ai download galileo s mastering multi agent systems",
+      "shows": [
+        "Chain of Thought"
+      ],
+      "episode_count": 1,
+      "first_seen": "2026-01-21",
+      "last_seen": "2026-01-21",
+      "kinds": [
+        "presented_by"
+      ],
+      "evidence": [
+        {
+          "show": "Chain of Thought",
+          "episode_title": "How Block Deployed AI Agents to 12,000 Employees in 8 Weeks w/ MCP | Angie Jones",
+          "date": "2026-01-21",
+          "kind": "presented_by",
+          "snippet": "nsdon Modular: https://www.modular.com/ Presented By: Galileo AI Download Galileo's Mastering Multi-Agent Systems for free here: https://galileo.ai/mastering-multi-agent-systems Topics Covered: - How"
+        }
+      ]
+    },
+    {
+      "name": "Galileo",
+      "normalized": "galileo",
+      "shows": [
+        "Chain of Thought"
+      ],
+      "episode_count": 1,
+      "first_seen": "2026-01-14",
+      "last_seen": "2026-01-14",
+      "kinds": [
+        "presented_by"
+      ],
+      "evidence": [
+        {
+          "show": "Chain of Thought",
+          "episode_title": "Gemini 3 & Robot Dogs: Inside Google DeepMind's AI Experiments | Paige Bailey",
+          "date": "2026-01-14",
+          "kind": "presented_by",
+          "snippet": "ps://www.linkedin.com/in/conorbronsdon/ Presented By: Galileo.ai Download Galileo's Mastering Multi-Agent Systems for free here!: https://galileo.ai/mastering-multi-agent-systems Topics Covered: - Gem"
+        }
+      ]
+    },
+    {
+      "name": "COGNITIVE",
+      "normalized": "cognitive",
+      "shows": [
+        "The Cognitive Revolution"
+      ],
+      "episode_count": 5,
+      "first_seen": "2025-11-20",
+      "last_seen": "2025-12-19",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI 2025 \u2192 2026 Live Show | Part 2",
+          "date": "2025-12-19",
+          "kind": "promo_code",
+          "snippet": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Shopify: Shopify powers millions of businesses worldwide, handling 10% of U."
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI 2025 \u2192 2026 Live Show | Part 1",
+          "date": "2025-12-18",
+          "kind": "promo_code",
+          "snippet": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Shopify: Shopify powers millions of businesses worldwide, handling 10% of U."
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI's Energy & Water Demands: Sorting Fact from Fiction with Andy Masley",
+          "date": "2025-12-14",
+          "kind": "promo_code",
+          "snippet": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, f"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Superintelligence: To Ban or Not to Ban? Max Tegmark & Dean Ball join Liron Shapira on Doom Debates",
+          "date": "2025-12-10",
+          "kind": "promo_code",
+          "snippet": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Agents of Scale: Agents of Scale is a podcast from Zapier CEO Wade Foster, f"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Escaping AI Slop: How Atlassian Gives AI Teammates Taste, Knowledge, & Workflows, w- Sherif Mansour",
+          "date": "2025-11-20",
+          "kind": "promo_code",
+          "snippet": "I features. Start creating for free and use code COGNITIVE to get one free month of Framer Pro at https://framer.com/design Tasklet: Tasklet is an AI agent that automates your work 24/7; just describe"
+        }
+      ]
+    },
+    {
+      "name": "Notion AI Meeting Notes",
+      "normalized": "notion ai meeting notes",
+      "shows": [
+        "The Cognitive Revolution"
+      ],
+      "episode_count": 20,
+      "first_seen": "2025-08-06",
+      "last_seen": "2025-10-22",
+      "kinds": [
+        "brought_to_you_by"
+      ],
+      "evidence": [
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Always Bet on the Models: How Tasklet Puts the Agency in Agents, with CEO Andrew Lee",
+          "date": "2025-10-22",
+          "kind": "brought_to_you_by",
+          "snippet": "aradigm of virtual employees. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Agent-first vs. workflow-first approach: Task Lit fundamenta"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Education in the AI Age: a Teacher Rethinks Learning & Purpose, w/ Johan Falk of Graspable AI",
+          "date": "2025-10-08",
+          "kind": "brought_to_you_by",
+          "snippet": "ly advancing AI capabilities. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Three Purposes of Education: Education serves to supply work"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "The Customer Service Revolution: Building Fin, with Eoghan McCabe & Fergal Reid of Intercom",
+          "date": "2025-10-05",
+          "kind": "brought_to_you_by",
+          "snippet": "cing at $0.99 per resolution. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Sponsors: Linear: Linear is the system for modern product de"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Training an AI Scientist with Feedback from Reality, w- Liam Fedus & Ekin Dogus Cubuk (from a16z)",
+          "date": "2025-10-02",
+          "kind": "brought_to_you_by",
+          "snippet": "&D in advanced manufacturing. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: \u2060https://notion.com/lp/nathan Core innovation: Periodic Labs is creating a \"physically gr"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "The Machines Are Taking Our Jobs - Thank God? Emad Mostaque\u2019s Guide to the next 1000 Days",
+          "date": "2025-09-28",
+          "kind": "brought_to_you_by",
+          "snippet": "her than just capital owners. Shownotes brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Read the full transcript: https://storage.aipodcast.ing/tran"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Stripe's Payments Foundation Model: How Data & Infra Create Compounding Advantage, w/ Emily Sands",
+          "date": "2025-09-25",
+          "kind": "brought_to_you_by",
+          "snippet": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Stripe's Scale: Processes $1.4 trillion annually, serving bo"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Full-Stack AI Safety: Why Defense-in-Depth Might Work, with Far.AI CEO Adam Gleave",
+          "date": "2025-09-20",
+          "kind": "brought_to_you_by",
+          "snippet": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: \u2060https://notion.com/lp/nathan Post-AGI Vision: Adam Gleave outlined a \"gradual disempower"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Can We Stop AI Deception? Apollo Research Tests OpenAI's Deliberative Alignment, w/ Marius Hobbhahn",
+          "date": "2025-09-18",
+          "kind": "brought_to_you_by",
+          "snippet": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Definition of AI Scheming: AI scheming is defined as \"covert"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "User-Owned AI: On-Chain Training, Inference, and Agents, with NEAR's Illia Polosukhin",
+          "date": "2025-09-13",
+          "kind": "brought_to_you_by",
+          "snippet": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: \u2060https://notion.com/lp/nathan Evolution from AI to Blockchain: Near Protocol evolved from"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Coaching the Creators: Inside the Minds Building Frontier AI with Executive Coach Joe Hudson",
+          "date": "2025-09-11",
+          "kind": "brought_to_you_by",
+          "snippet": "e Cloud Infrastructure. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Three-Level Coaching Approach: Joe Hudson coaches AI leaders"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Zvi Mowshowitz on Longer Timelines, RL-induced Doom, and Why China is Refusing H20s",
+          "date": "2025-09-06",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan Timeline Adjustment: Zvi has lengthened his AGI timelines be"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "In-AI Advertising: Better Answers for Users, Big Questions for Society, with ZeroClick's Ryan Hudson",
+          "date": "2025-09-03",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at: https://notion.com/lp/nathan ZeroClick's Evolution: Originally creators of Pi Ad Block, t"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Material Abundance: Radical AI\u2019s Closed-Loop Lab Automates Scientific Discovery",
+          "date": "2025-08-30",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060\u2060\u2060\u2060\u2060\u2060\u2060\u2060\u2060https://\u2060\u2060notion.com/lp/nathan Material Development Challenges: Current material"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Untangling Neural Network Mechanisms: Goodfire's Lee Sharkey on Parameter-based Interpretability",
+          "date": "2025-08-27",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060\u2060\u2060\u2060https://\u2060\u2060notion.com/lp/nathan Parameter vs. Activation Decomposition: Traditional int"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "What if Humans Weaponize Superintelligence, w/ Tom Davidson, from Future of Life Institute Podcast",
+          "date": "2025-08-23",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060https://\u2060\u2060notion.com/lp/nathan Three Primary AI Coup Enablement Methods: Tom Davidson ide"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "The AI Whistleblower Initiative: Supporting AGI Insiders When It Matters Most, w/ founder Karl Koch",
+          "date": "2025-08-20",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060\u2060\u2060\u2060https://\u2060\u2060notion.com/lp/nathan AI Whistleblower Initiative Origins: Founded by Karl Ko"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Autonomous Organizations: Vending Bench & Beyond, w/ Lukas Petersson & Axel Backlund of Andon Labs",
+          "date": "2025-08-16",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at \u2060https://\u2060\u2060notion.com/lp/nathan Autonomous Organization Philosophy: Andon Labs believes th"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Dean W. Ball on America's AI Action Plan & 4 Months at the White House",
+          "date": "2025-08-13",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at https://notion.com/lp/nathan White House Experience & Government Role: Dean Ball served as"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Jake Sullivan on Navigating AI Uncertainty and Managing Competition with China",
+          "date": "2025-08-09",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at https://notion.com/lp/nathan Four-Category Framework: Sullivan organizes his thinking abou"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Sovereign AI: Geopolitical Strategy & Industrial Policy for Countries 3-193, with Anjney Midha, a16z",
+          "date": "2025-08-06",
+          "kind": "brought_to_you_by",
+          "snippet": "nfrastructure, Shopify. Shownotes below brought to you by Notion AI Meeting Notes - try one month for free at https://notion.com/lp/nathan What is Sovereign AI? Varies by stakeholder - for enterprises"
+        }
+      ]
+    },
+    {
+      "name": "Black Forest Labs as a",
+      "normalized": "black forest labs as a",
+      "shows": [
+        "Latent Space"
+      ],
+      "episode_count": 1,
+      "first_seen": "2024-12-31",
+      "last_seen": "2024-12-31",
+      "kinds": [
+        "in_partnership_with"
+      ],
+      "evidence": [
+        {
+          "show": "Latent Space",
+          "episode_title": "Latent.Space 2024 Year in Review",
+          "date": "2024-12-31",
+          "kind": "in_partnership_with",
+          "snippet": "'s images were originally launched, uh, in partnership with Black Forest Labs as a, as a thin wrapper. [00:50:24] swyx: And then Grok was like, no, we'll make our own. And so they've made their own. I"
+        }
+      ]
+    },
+    {
+      "name": "CHANGELOG",
+      "normalized": "changelog",
+      "shows": [
+        "Practical AI"
+      ],
+      "episode_count": 9,
+      "first_seen": "2021-01-19",
+      "last_seen": "2024-12-19",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "Practical AI",
+          "episode_title": "Mozart to Megadeth at CHRP",
+          "date": "2024-12-19",
+          "kind": "promo_code",
+          "snippet": "ra \u2014 Go to eightsleep.com/changelog and use the code CHANGELOG. You can try it for free for 30 days - but we\u2019re confident you will not want to return it (we love ours). Once you experience AI-optimize"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Sidekick is an AI Shopify expert",
+          "date": "2024-12-11",
+          "kind": "promo_code",
+          "snippet": "ra \u2014 Go to eightsleep.com/changelog and use the code CHANGELOG. You can try it for free for 30 days - but we\u2019re confident you will not want to return it (we love ours). Once you experience AI-optimize"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Creating tested, reliable AI applications",
+          "date": "2024-11-13",
+          "kind": "promo_code",
+          "snippet": "ltra Go to eightsleep.com/changelog and use the code CHANGELOG. You can try it for free for 30 days - but we\u2019re confident you will not want to return it (we love ours). Once you experience AI-optimize"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "YOLOv9: Computer vision is alive and well",
+          "date": "2024-03-06",
+          "kind": "promo_code",
+          "snippet": "uncements (and win swag along the way). Use the code CHANGELOG when you sign up to get $100 OFF the team plan. Typesense \u2013 Lightning fast, globally distributed Search-as-a-Service that runs in memory."
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Green AI \ud83c\udf32",
+          "date": "2021-03-02",
+          "kind": "promo_code",
+          "snippet": "ght now. Click here to check it out and use code CHANGELOG for 20% off! Featuring: Roy Schwartz \u2013 Website , X Jesse Dodge \u2013 X Chris Benson \u2013 Website , GitHub , LinkedIn , X Daniel Whitenack \u2013 Website"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "The AI doc will see you now",
+          "date": "2021-02-16",
+          "kind": "promo_code",
+          "snippet": "ght now. Click here to check it out and use code CHANGELOG for 20% off! Featuring: Elad Walach \u2013 LinkedIn , X Chris Benson \u2013 Website , GitHub , LinkedIn , X Show Notes: Aidoc | Website Aidoc Medical |"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Cooking up synthetic data with Gretel",
+          "date": "2021-02-02",
+          "kind": "promo_code",
+          "snippet": "ght now. Click here to check it out and use code CHANGELOG for 20% off! The Brave Browser \u2013 Browse the web up to 8x faster than Chrome and Safari, block ads and trackers by default, and reward your fa"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "The nose knows",
+          "date": "2021-01-26",
+          "kind": "promo_code",
+          "snippet": "ght now. Click here to check it out and use code CHANGELOG for 20% off! Changelog++ \u2013 You love our content and you want to take it to the next level by showing your support. We\u2019ll take you closer to t"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Accelerating ML innovation at MLCommons",
+          "date": "2021-01-19",
+          "kind": "promo_code",
+          "snippet": "ght now. Click here to check it out and use code CHANGELOG for 20% off! Featuring: David Kanter \u2013 GitHub , X Chris Benson \u2013 Website , GitHub , LinkedIn , X Daniel Whitenack \u2013 Website , GitHub , X Show"
+        }
+      ]
+    },
+    {
+      "name": "DISCORDGANG",
+      "normalized": "discordgang",
+      "shows": [
+        "Latent Space"
+      ],
+      "episode_count": 1,
+      "first_seen": "2024-12-10",
+      "last_seen": "2024-12-10",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "Latent Space",
+          "episode_title": "Generative Video WorldSim, Diffusion, Vision, Reinforcement Learning and Robotics \u2014 ICML 2024 Part 1",
+          "date": "2024-12-10",
+          "kind": "promo_code",
+          "snippet": "ickets for those who are deciding now \u2014 use code DISCORDGANG if you need it. See you in Vancouver! We\u2019ve been sitting on our ICML recordings for a while (from today\u2019s first-ever SOLO guest cohost, Bri"
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "normalized": "google",
+      "shows": [
+        "Latent Space"
+      ],
+      "episode_count": 1,
+      "first_seen": "2024-12-02",
+      "last_seen": "2024-12-02",
+      "kinds": [
+        "in_partnership_with"
+      ],
+      "evidence": [
+        {
+          "show": "Latent Space",
+          "episode_title": "Bolt.new, Flow Engineering for Code Agents, and >$8m ARR in 2 months as a Claude Wrapper",
+          "date": "2024-12-02",
+          "kind": "in_partnership_with",
+          "snippet": "ata of web container online. But swyx : in partnership with Google, right? swyx : Like Google actually had to help you get over the finish line with stuff. Eric : A hundred percent, because well, you"
+        }
+      ]
+    },
+    {
+      "name": "OpenAI",
+      "normalized": "openai",
+      "shows": [
+        "Latent Space"
+      ],
+      "episode_count": 2,
+      "first_seen": "2023-05-05",
+      "last_seen": "2024-11-28",
+      "kinds": [
+        "in_partnership_with",
+        "sponsored_by"
+      ],
+      "evidence": [
+        {
+          "show": "Latent Space",
+          "episode_title": "The new Claude 3.5 Sonnet, Computer Use, and Building SOTA Agents \u2014 with Erik Schluntz, Anthropic",
+          "date": "2024-11-28",
+          "kind": "in_partnership_with",
+          "snippet": "So SWE-Bench verified was actually made in partnership with OpenAI, and they hired humans to go review all these tasks and pick out a subset to try to remove any obstacle like this that would make the"
+        },
+        {
+          "show": "Latent Space",
+          "episode_title": "No Moat: Closed AI gets its Open Source wakeup call \u2014 ft. Simon Willison",
+          "date": "2023-05-05",
+          "kind": "sponsored_by",
+          "snippet": "d bucks or something, but I, it's, it's sponsored by OpenAI, so I haven't, I haven't actually spent any real money. [00:43:08] swyx: What? That's [00:43:09] awesome. [00:43:10] Travis Fischer: Yeah. Y"
+        }
+      ]
+    },
+    {
+      "name": "REVOLUTION",
+      "normalized": "revolution",
+      "shows": [
+        "The Cognitive Revolution"
+      ],
+      "episode_count": 2,
+      "first_seen": "2024-11-21",
+      "last_seen": "2024-11-23",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Designing the Future: Inside Canva's AI Strategy with John Milinovich, GenAI Product Lead at Canva",
+          "date": "2024-11-23",
+          "kind": "promo_code",
+          "snippet": "e your personal data back with Incogni! Use code REVOLUTION at the link below and get 60% off an annual plan: https://incogni.com/revolution Shopify: Shopify is the world's leading e-commerce platform"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Everything You Wanted to Know About LLM Post-Training, with Nathan Lambert of Allen Institute for AI",
+          "date": "2024-11-21",
+          "kind": "promo_code",
+          "snippet": "e your personal data back with Incogni! Use code REVOLUTION at the link below and get 60% off an annual plan: https://incogni.com/revolution Notion: Notion offers powerful workflow and automation temp"
+        }
+      ]
+    },
+    {
+      "name": "PRACTICALAI",
+      "normalized": "practicalai",
+      "shows": [
+        "Practical AI"
+      ],
+      "episode_count": 3,
+      "first_seen": "2024-10-03",
+      "last_seen": "2024-11-05",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "Practical AI",
+          "episode_title": "AI is changing the cybersecurity threat landscape",
+          "date": "2024-11-05",
+          "kind": "promo_code",
+          "snippet": "l. Go to eightsleep.com/PRACTICALAI and use the code PRACTICALAI to get $350 off your very own Pod 4 Ultra. You can try it for free for 30 days - but we\u2019re confident you will not want to return it. On"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Towards high-quality (maybe synthetic) datasets",
+          "date": "2024-10-09",
+          "kind": "promo_code",
+          "snippet": "l. Go to eightsleep.com/PRACTICALAI and use the code PRACTICALAI to get $350 off your very own Pod 4 Ultra. You can try it for free for 30 days - but we\u2019re confident you will not want to return it. On"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Understanding what's possible, doable & scalable",
+          "date": "2024-10-03",
+          "kind": "promo_code",
+          "snippet": "l. Go to eightsleep.com/PRACTICALAI and use the code PRACTICALAI to get $350 off your very own Pod 4 Ultra. You can try it for free for 30 days - but we\u2019re confident you will not want to return it. On"
+        }
+      ]
+    },
+    {
+      "name": "GROUP",
+      "normalized": "group",
+      "shows": [
+        "Latent Space"
+      ],
+      "episode_count": 1,
+      "first_seen": "2024-03-29",
+      "last_seen": "2024-03-29",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "Latent Space",
+          "episode_title": "Presenting the AI Engineer World's Fair \u2014 with Sam Schillace, Deputy CTO of Microsoft",
+          "date": "2024-03-29",
+          "kind": "promo_code",
+          "snippet": "nts. If you purchase four more tickets, use the code GROUP, and one of those four tickets will be free. If you want to speak at the event CFP closes April 8th, so check out the link at ai. engineer, s"
+        }
+      ]
+    },
+    {
+      "name": "Weights & Biases",
+      "normalized": "weights & biases",
+      "shows": [
+        "Gradient Dissent"
+      ],
+      "episode_count": 12,
+      "first_seen": "2023-04-04",
+      "last_seen": "2024-01-18",
+      "kinds": [
+        "brought_to_you_by"
+      ],
+      "evidence": [
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "AI\u2019s Future: Investment & Impact with Sarah Guo and Elad Gil",
+          "date": "2024-01-18",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Revolutionizing AI Data Management with Jerry Liu, CEO of LlamaIndex",
+          "date": "2024-01-04",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Bridging AI and Science: The Impact of Machine Learning on Material Innovation with Joe Spisak of Meta",
+          "date": "2023-12-07",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Unlocking the Power of Language Models in Enterprise: A Deep Dive with Chris Van Pelt",
+          "date": "2023-11-16",
+          "kind": "brought_to_you_by",
+          "snippet": "osts Lavanya Shukla and Caryn Marooney, brought to you by Weights & Biases. Be sure to click the subscribe button below, to keep your finger on the pulse of this fast-moving space and hear from other"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Providing Greater Access to LLMs with Brandon Duderstadt, Co-Founder and CEO of Nomic AI",
+          "date": "2023-07-27",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Exploring PyTorch and Open-Source Communities with Soumith Chintala, VP/Fellow of Meta, Co-Creator of PyTorch",
+          "date": "2023-07-13",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Advanced AI Accelerators and Processors with Andrew Feldman of Cerebras Systems",
+          "date": "2023-06-22",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Enabling LLM-Powered Applications with Harrison Chase of LangChain",
+          "date": "2023-06-01",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Deploying Autonomous Mobile Robots with Jean Marc Alkazzi at idealworks",
+          "date": "2023-05-18",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "How EleutherAI Trains and Releases LLMs: Interview with Stella Biderman",
+          "date": "2023-05-04",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Scaling LLMs and Accelerating Adoption with Aidan Gomez at Cohere",
+          "date": "2023-04-20",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        },
+        {
+          "show": "Gradient Dissent",
+          "episode_title": "Neural Network Pruning and Training with Jonathan Frankle at MosaicML",
+          "date": "2023-04-04",
+          "kind": "brought_to_you_by",
+          "snippet": "tening to the Gradient Dissent podcast, brought to you by Weights & Biases. If you enjoyed this episode, please leave a review to help get the word out about the show. And be sure to subscribe so you"
+        }
+      ]
+    },
+    {
+      "name": "the Turpentine Media network",
+      "normalized": "the turpentine media network",
+      "shows": [
+        "The Cognitive Revolution"
+      ],
+      "episode_count": 3,
+      "first_seen": "2023-10-03",
+      "last_seen": "2023-11-08",
+      "kinds": [
+        "brought_to_you_by"
+      ],
+      "evidence": [
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "OpenAI DevDay: Beyond the Headlines with Logan Kilpatrick, OpenAI's Dev Relations Lead",
+          "date": "2023-11-08",
+          "kind": "brought_to_you_by",
+          "snippet": "ar from now The Cognitive Revolution is brought to you by the Turpentine Media network. Producer: Vivian Meng Executive Producers: Amelia Salyers, and Erik Torenberg Editor: Graham Bessellieu For inqu"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "AI is Supercharging Writers with Sudowrite's Founder, James Yu",
+          "date": "2023-10-10",
+          "kind": "brought_to_you_by",
+          "snippet": "Midjourney The Cognitive Revolution is brought to you by the Turpentine Media network. Producer: Vivian Meng Executive Producers: Amelia Salyers, and Erik Torenberg Editor: Graham Bessellieu For inqu"
+        },
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "Gunning for Google with Perplexity CEO Aravind Srinivas",
+          "date": "2023-10-03",
+          "kind": "brought_to_you_by",
+          "snippet": "al activity The Cognitive Revolution is brought to you by the Turpentine Media network. Producer: Vivian Meng Executive Producers: Amelia Salyers, and Erik Torenberg Editor: Graham Bessellieu For inqu"
+        }
+      ]
+    },
+    {
+      "name": "Decibel",
+      "normalized": "decibel",
+      "shows": [
+        "Latent Space"
+      ],
+      "episode_count": 1,
+      "first_seen": "2023-11-03",
+      "last_seen": "2023-11-03",
+      "kinds": [
+        "in_partnership_with"
+      ],
+      "evidence": [
+        {
+          "show": "Latent Space",
+          "episode_title": "Beating GPT-4 with Open Source LLMs \u2014 with Michael Royzen of Phind",
+          "date": "2023-11-03",
+          "kind": "in_partnership_with",
+          "snippet": "e Launchpad , an AI-focused accelerator in partnership with Decibel . If you\u2019re an AI founder of enterprise early adopter, fill out this form and we\u2019ll be in touch with more details. We also have a lo"
+        }
+      ]
+    },
+    {
+      "name": "AutoGPT",
+      "normalized": "autogpt",
+      "shows": [
+        "Latent Space"
+      ],
+      "episode_count": 1,
+      "first_seen": "2023-08-30",
+      "last_seen": "2023-08-30",
+      "kinds": [
+        "presented_by"
+      ],
+      "evidence": [
+        {
+          "show": "Latent Space",
+          "episode_title": "RWKV: Reinventing RNNs for the Transformer Era \u2014 with Eugene Cheah of UIlicious",
+          "date": "2023-08-30",
+          "kind": "presented_by",
+          "snippet": "gineer Summit Expo has been announced , presented by AutoGPT (and future guest Toran Bruce-Richards !) Stay tuned for more updates on the Summit livestream and Latent Space University . This post was"
+        }
+      ]
+    },
+    {
+      "name": "Athena",
+      "normalized": "athena",
+      "shows": [
+        "The Cognitive Revolution"
+      ],
+      "episode_count": 1,
+      "first_seen": "2023-07-06",
+      "last_seen": "2023-07-06",
+      "kinds": [
+        "brought_to_you_by"
+      ],
+      "evidence": [
+        {
+          "show": "The Cognitive Revolution",
+          "episode_title": "E43: AI Scouting Report \u2013 Part 1 of 3: Fundamentals [Bonus YouTube Episode]",
+          "date": "2023-07-06",
+          "kind": "brought_to_you_by",
+          "snippet": "inutes. This special episode is in part brought to you by Athena. You can use Nathan\u2019s referral link (http://athenago.me/nathan-labenz) for a free first month of Athena services for qualified customer"
+        }
+      ]
+    },
+    {
+      "name": "SHIPIT",
+      "normalized": "shipit",
+      "shows": [
+        "Practical AI"
+      ],
+      "episode_count": 3,
+      "first_seen": "2021-09-01",
+      "last_seen": "2021-09-14",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "Practical AI",
+          "episode_title": "Trends in data labeling",
+          "date": "2021-09-14",
+          "kind": "promo_code",
+          "snippet": "ure. Try it today at signalwire.com and use code SHIPIT for $25 in developer credit. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experiences. Move beyond your cont"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Stellar inference speed via AutoNAS",
+          "date": "2021-09-07",
+          "kind": "promo_code",
+          "snippet": "ure. Try it today at signalwire.com and use code SHIPIT for $25 in developer credit. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experiences. Move beyond your cont"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Anaconda + Pyston and more",
+          "date": "2021-09-01",
+          "kind": "promo_code",
+          "snippet": "ure. Try it today at signalwire.com and use code SHIPIT for $25 in developer credit. The Brave Browser \u2013 Browse the web up to 8x faster than Chrome and Safari, block ads and trackers by default, and r"
+        }
+      ]
+    },
+    {
+      "name": "the Intuit machine learning platform across various teams",
+      "normalized": "the intuit machine learning platform across various teams",
+      "shows": [
+        "The TWIML AI Podcast"
+      ],
+      "episode_count": 1,
+      "first_seen": "2020-12-16",
+      "last_seen": "2020-12-16",
+      "kinds": [
+        "supported_by"
+      ],
+      "evidence": [
+        {
+          "show": "The TWIML AI Podcast",
+          "episode_title": "ML Feature Store at Intuit with Srivathsan Canchi - #438",
+          "date": "2020-12-16",
+          "kind": "supported_by",
+          "snippet": "athsan, we explore the focus areas that are supported by the Intuit machine learning platform across various teams, including QuickBooks and Mint, Turbotax, and Credit Karma, and his thoughts on why c"
+        }
+      ]
+    },
+    {
+      "name": "CMINFDW20",
+      "normalized": "cminfdw20",
+      "shows": [
+        "Practical AI"
+      ],
+      "episode_count": 1,
+      "first_seen": "2020-09-21",
+      "last_seen": "2020-09-21",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "Practical AI",
+          "episode_title": "Learning about (Deep) Learning",
+          "date": "2020-09-21",
+          "kind": "promo_code",
+          "snippet": "er 5-9, 2020 20% off for our listeners! Use code CMINFDW20 by 9/25 for additional 20% off NVIDIA Deep Learning Institute NVIDIA to Acquire Arm for $40 Billion NVIDIA Ampere Architecture GeForce RTX 30"
+        }
+      ]
+    },
+    {
+      "name": "Go Time panelist Mat Ryer",
+      "normalized": "go time panelist mat ryer",
+      "shows": [
+        "Practical AI"
+      ],
+      "episode_count": 2,
+      "first_seen": "2020-09-09",
+      "last_seen": "2020-09-14",
+      "kinds": [
+        "brought_to_you_by"
+      ],
+      "evidence": [
+        {
+          "show": "Practical AI",
+          "episode_title": "When AI goes wrong",
+          "date": "2020-09-14",
+          "kind": "brought_to_you_by",
+          "snippet": "hing you need to build your next thing. Brought to you by Go Time panelist Mat Ryer. Try it out today! Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experiences. Mov"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Speech tech and Common Voice at Mozilla",
+          "date": "2020-09-09",
+          "kind": "brought_to_you_by",
+          "snippet": "hing you need to build your next thing. Brought to you by Go Time panelist Mat Ryer. Try it out today! Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experiences. Mov"
+        }
+      ]
+    },
+    {
+      "name": "CHANGELOG20",
+      "normalized": "changelog20",
+      "shows": [
+        "Practical AI"
+      ],
+      "episode_count": 3,
+      "first_seen": "2019-04-15",
+      "last_seen": "2019-04-30",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "Practical AI",
+          "episode_title": "CTRL-labs lets you control machines with your mind",
+          "date": "2019-04-30",
+          "kind": "promo_code",
+          "snippet": ", architecture, and emerging languages. Use the code CHANGELOG20 to get 20% off Bronze, Silver, and Gold passes. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experi"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Deep Reinforcement Learning",
+          "date": "2019-04-23",
+          "kind": "promo_code",
+          "snippet": ", architecture, and emerging languages. Use the code CHANGELOG20 to get 20% off Bronze, Silver, and Gold passes. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experi"
+        },
+        {
+          "show": "Practical AI",
+          "episode_title": "Making the world a better place at the AI for Good Foundation",
+          "date": "2019-04-15",
+          "kind": "promo_code",
+          "snippet": ", architecture, and emerging languages. Use the code CHANGELOG20 to get 20% off Bronze, Silver, and Gold passes. Fastly \u2013 Our bandwidth partner. Fastly powers fast, secure, and scalable digital experi"
+        }
+      ]
+    },
+    {
+      "name": "TWIMLAI",
+      "normalized": "twimlai",
+      "shows": [
+        "The TWIML AI Podcast"
+      ],
+      "episode_count": 5,
+      "first_seen": "2018-01-17",
+      "last_seen": "2018-04-05",
+      "kinds": [
+        "promo_code"
+      ],
+      "evidence": [
+        {
+          "show": "The TWIML AI Podcast",
+          "episode_title": "Human-in-the-Loop AI for Emergency Response & More w/ Robert Munro - TWiML Talk #125",
+          "date": "2018-04-05",
+          "kind": "promo_code",
+          "snippet": "gure-eight.com/train-ai, and be sure to use code TWIMLAI for 30% off your registration! For those of you listening to this on or before April 6th, Figure Eight is offering an even better deal on event"
+        },
+        {
+          "show": "The TWIML AI Podcast",
+          "episode_title": "A Linear-Time Kernel Goodness-of-Fit Test - NIPS Best Paper '17 - TWiML Talk #100",
+          "date": "2018-01-24",
+          "kind": "promo_code",
+          "snippet": ", and more! Definitely check it out and use the code TWIMLAI for 20% off of registration. The notes for this show can be found at twimlai.com/talk/100."
+        },
+        {
+          "show": "The TWIML AI Podcast",
+          "episode_title": "Solving Imperfect-Information Games with Tuomas Sandholm - NIPS \u201917 Best Paper - TWiML Talk #99",
+          "date": "2018-01-22",
+          "kind": "promo_code",
+          "snippet": ", and more! Definitely check it out and use the code TWIMLAI for 20% off of registration. The notes for this show can be found at twimlai.com/talk/99"
+        },
+        {
+          "show": "The TWIML AI Podcast",
+          "episode_title": "Separating Vocals in Recorded Music at Spotify with Eric Humphrey - TWiML Talk #98",
+          "date": "2018-01-19",
+          "kind": "promo_code",
+          "snippet": ", and more! Definitely check it out and use the code TWIMLAI for 20% off of registration. The notes for this show can be found at twimlai.com/talk/98"
+        },
+        {
+          "show": "The TWIML AI Podcast",
+          "episode_title": "Accelerating Deep Learning with Mixed Precision Arithmetic with Greg Diamos - TWiML Talk #97",
+          "date": "2018-01-17",
+          "kind": "promo_code",
+          "snippet": ", and more! Definitely check it out and use the code TWIMLAI for 20% off of registration."
+        }
+      ]
+    }
+  ],
+  "warnings": [],
+  "methodology": {
+    "notes": [
+      "Detection is heuristic regex over public episode descriptions and titles fetched from each show's live RSS feed. Nothing is scraped from players or charts.",
+      "MANY SPONSOR READS ARE AUDIO-ONLY and never appear in the description. Absence of a detection is NOT absence of sponsorship. Treat this list as a floor, not a census.",
+      "Extracted names are candidates, not confirmations. A human should verify each one against the actual episode before outreach.",
+      "The scan covers only the episodes a feed currently serves. Hosts that cap the feed window hide older sponsorships.",
+      "Promo codes with no adjacent vendor domain are listed under the code itself and need a human to map them to the company.",
+      "UTM-tagged and shortener links are recorded per show as weak signals but never aggregated into sponsor rows, because shows tag their own marketing links too.",
+      "Multi-sponsor reads of the form 'X and Y' are split on the word 'and'; ampersand names (e.g. Weights & Biases) are kept intact.",
+      "Candidates must start with a capital letter or digit (after an optional article), and 'presented by'/'supported by' preceded by prose nouns ('challenges presented by') are skipped. An all-lowercase brand name would be missed by the first guard."
+    ]
+  }
+}

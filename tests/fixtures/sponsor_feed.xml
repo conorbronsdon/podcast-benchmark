@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <title>Sponsor Fixture Show</title>
+    <itunes:image href="https://example.com/art.jpg"/>
+    <itunes:category text="Technology"/>
+
+    <item>
+      <title>Ep 4: Evals in production</title>
+      <pubDate>Mon, 01 Jun 2026 10:00:00 +0000</pubDate>
+      <description><![CDATA[<p>This episode is brought to you by <a href="https://galileo.example?utm_source=podcast&amp;utm_campaign=ep4">Galileo</a>, the AI evaluation platform.</p><p>We dig into evals.</p>]]></description>
+    </item>
+
+    <item>
+      <title>Ep 3: Agents that ship</title>
+      <pubDate>Mon, 04 May 2026 10:00:00 +0000</pubDate>
+      <description><![CDATA[Sponsored by Galileo. Use code FIXTURE20 at galileo.example for 20% off. Also try https://bit.ly/fixture-show]]></description>
+    </item>
+
+    <item>
+      <title>Ep 2: A guest, no sponsor</title>
+      <pubDate>Mon, 06 Apr 2026 10:00:00 +0000</pubDate>
+      <description><![CDATA[We talk with Jane Doe, CTO of Acme Corp, about how Acme Corp does retrieval at scale. https://acme.example/blog]]></description>
+    </item>
+
+    <item>
+      <title>Ep 1: Two sponsors</title>
+      <pubDate>Mon, 02 Mar 2026 10:00:00 +0000</pubDate>
+      <description><![CDATA[Thanks to our sponsors: Datadog and LaunchDarkly. This one is supported by our listeners too.]]></description>
+    </item>
+  </channel>
+</rss>
