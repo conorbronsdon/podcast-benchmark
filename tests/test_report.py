@@ -3,8 +3,9 @@
 import json
 from pathlib import Path
 
+from podcast_benchmark.cli import main as cli_main
 from podcast_benchmark.config import parse_config
-from podcast_benchmark.report import build_benchmark, render_markdown
+from podcast_benchmark.report import build_benchmark, render_markdown, write_outputs
 
 FIXTURE = (Path(__file__).parent / "fixtures" / "sample_feed.xml").read_bytes()
 
@@ -56,6 +57,59 @@ class FakeSession:
         return FakeResp(content=FIXTURE)
 
 
+class FailingRssSession(FakeSession):
+    """Apple and Podcast Index succeed; the RSS fetch raises."""
+
+    def get(self, url, params=None, headers=None, timeout=None):
+        if "itunes.apple.com" in url or "podcastindex.org" in url:
+            return super().get(url, params=params, headers=headers, timeout=timeout)
+        raise ConnectionError("rss down")
+
+
+def test_rss_failure_yields_na_not_zeros():
+    """A failed RSS fetch must produce N/A feed metrics, never a 0/4 hygiene
+    score or 0-item feed that would be ranked as if it were real data."""
+    cfg = parse_config(CONFIG)
+    doc = build_benchmark(cfg, pi_key="k", pi_secret="s", session=FailingRssSession())
+
+    for show in doc["shows"]:
+        m = show["metrics"]
+        assert m["hygiene_score"] is None
+        assert m["hygiene"] is None
+        assert m["feed_items_seen"] is None
+        assert m["cadence_per_month"] is None
+        assert m["transcript_pct"] is None
+        assert m["days_since_last_episode"] is None
+        assert any("rss: fetch" in w for w in show["warnings"])
+
+    md = render_markdown(doc)
+    # Overview hygiene cell renders N/A, not "0/4" or "None/4".
+    assert "None/4" not in md
+    assert "0/4" not in md
+    # Hygiene ranking is omitted (no show has data), not ranked on zeros.
+    assert "No show had data for this metric. Ranking omitted." in md
+    json.dumps(doc)
+
+
+def test_truncated_cadence_excluded_with_distinct_label():
+    """Shows excluded for a possibly-truncated window are labeled as such,
+    separately from shows excluded for having no data at all."""
+    cfg = parse_config(CONFIG)
+    doc = build_benchmark(cfg, pi_key="k", pi_secret="s", session=FakeSession())
+
+    # Force the subject's cadence window to look truncated.
+    subject = doc["shows"][0]
+    subject["metrics"]["cadence_window_truncated"] = True
+
+    md = render_markdown(doc)
+    assert (
+        "Excluded (feed window possibly truncated by the host; value reported "
+        "in the overview but not ranked): Subject Show." in md
+    )
+    # The truncated show is not lumped into the no-data exclusion line.
+    assert "Excluded as N/A (no data, not ranked): Subject Show" not in md
+
+
 def test_build_and_render_with_mocked_network():
     cfg = parse_config(CONFIG)
     doc = build_benchmark(
@@ -84,3 +138,20 @@ def test_build_and_render_with_mocked_network():
     assert "Methodology" in md
     # JSON is serializable.
     json.dumps(doc)
+
+
+def test_report_regenerates_from_cached_json(tmp_path):
+    """report.md can be reproduced byte-for-byte from a cached benchmark.json
+    with no network access (the --from-json CLI path)."""
+    cfg = parse_config(CONFIG)
+    doc = build_benchmark(cfg, pi_key="k", pi_secret="s", session=FakeSession())
+    first = tmp_path / "run1"
+    json_path, md_path = write_outputs(doc, str(first))
+
+    second = tmp_path / "run2"
+    rc = cli_main(["--from-json", json_path, "-o", str(second)])
+    assert rc == 0
+
+    original = Path(md_path).read_text(encoding="utf-8")
+    regenerated = (second / "report.md").read_text(encoding="utf-8")
+    assert regenerated == original

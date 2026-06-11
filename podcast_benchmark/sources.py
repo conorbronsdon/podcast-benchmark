@@ -23,12 +23,47 @@ import requests
 USER_AGENT = "podcast-benchmark/0.1 (+https://github.com/conorbronsdon/podcast-benchmark)"
 DEFAULT_TIMEOUT = 30
 
-# XML namespaces used in podcast RSS feeds.
-NS = {
-    "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
-    "podcast": "https://podcastindex.org/namespace/1.0",
-    "atom": "http://www.w3.org/2005/Atom",
-}
+# XML namespaces used in podcast RSS feeds. Real-world feeds declare these
+# under several URI variants, so element lookup matches any URI in the set
+# rather than a single canonical one.
+PODCAST_NS_URIS = frozenset(
+    {
+        "https://podcastindex.org/namespace/1.0",
+        "http://podcastindex.org/namespace/1.0",
+        # Variant used by feeds generated against the original namespace docs.
+        "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md",
+        "http://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md",
+    }
+)
+ITUNES_NS_URIS = frozenset(
+    {
+        "http://www.itunes.com/dtds/podcast-1.0.dtd",
+        "https://www.itunes.com/dtds/podcast-1.0.dtd",
+    }
+)
+
+
+def _split_tag(tag: Any) -> tuple[str | None, Any]:
+    """Split an ElementTree tag into (namespace_uri, local_name)."""
+    if isinstance(tag, str) and tag.startswith("{"):
+        uri, _, local = tag[1:].partition("}")
+        return uri, local
+    return None, tag
+
+
+def _findall_ns(parent: ET.Element, local: str, uris: frozenset[str]) -> list[ET.Element]:
+    """All direct children named ``local`` under any of the namespace URIs."""
+    out = []
+    for child in parent:
+        uri, name = _split_tag(child.tag)
+        if name == local and uri in uris:
+            out.append(child)
+    return out
+
+
+def _find_ns(parent: ET.Element, local: str, uris: frozenset[str]) -> ET.Element | None:
+    found = _findall_ns(parent, local, uris)
+    return found[0] if found else None
 
 
 @dataclass
@@ -196,7 +231,11 @@ def fetch_rss(feed_url: str, session: requests.Session | None = None) -> SourceR
 
 
 def _parse_duration(text: str | None) -> int | None:
-    """Parse itunes:duration to seconds. Accepts integer seconds or HH:MM:SS."""
+    """Parse itunes:duration to seconds.
+
+    Accepts bare seconds ("3600", "3600.5") and colon forms MM:SS / HH:MM:SS
+    (fractional seconds tolerated). Negative or malformed values return None.
+    """
     if not text:
         return None
     text = text.strip()
@@ -204,18 +243,25 @@ def _parse_duration(text: str | None) -> int | None:
         return None
     if ":" in text:
         parts = text.split(":")
+        if len(parts) > 3:
+            return None
         try:
-            nums = [int(p) for p in parts]
+            nums = [float(p) for p in parts]
         except ValueError:
             return None
-        seconds = 0
+        if any(n < 0 for n in nums):
+            return None
+        seconds = 0.0
         for n in nums:
             seconds = seconds * 60 + n
-        return seconds
+        return int(round(seconds))
     try:
-        return int(float(text))
+        value = float(text)
     except ValueError:
         return None
+    if value < 0:
+        return None
+    return int(value)
 
 
 def _parse_pubdate(text: str | None) -> datetime | None:
@@ -246,28 +292,30 @@ def parse_rss_bytes(raw: bytes) -> dict[str, Any]:
 
     # Channel-level hygiene signals.
     has_artwork = (
-        channel.find("itunes:image", NS) is not None
+        _find_ns(channel, "image", ITUNES_NS_URIS) is not None
         or channel.find("image") is not None
     )
     categories = [
         c.get("text")
-        for c in channel.findall("itunes:category", NS)
+        for c in _findall_ns(channel, "category", ITUNES_NS_URIS)
         if c.get("text")
     ]
     has_categories = len(categories) > 0
-    has_funding = channel.find("podcast:funding", NS) is not None
-    locked_el = channel.find("podcast:locked", NS)
+    has_funding = _find_ns(channel, "funding", PODCAST_NS_URIS) is not None
+    locked_el = _find_ns(channel, "locked", PODCAST_NS_URIS)
     has_locked = locked_el is not None and (locked_el.text or "").strip().lower() == "yes"
 
     episodes: list[dict[str, Any]] = []
     for item in channel.findall("item"):
         pub_raw = item.findtext("pubDate")
         pub_dt = _parse_pubdate(pub_raw)
-        dur = _parse_duration(item.findtext("itunes:duration", namespaces=NS))
-        has_transcript = item.find("podcast:transcript", NS) is not None
+        dur_el = _find_ns(item, "duration", ITUNES_NS_URIS)
+        dur = _parse_duration(dur_el.text if dur_el is not None else None)
+        has_transcript = _find_ns(item, "transcript", PODCAST_NS_URIS) is not None
+        summary_el = _find_ns(item, "summary", ITUNES_NS_URIS)
         description = (
             item.findtext("description")
-            or item.findtext("itunes:summary", namespaces=NS)
+            or (summary_el.text if summary_el is not None else None)
             or ""
         )
         episodes.append(

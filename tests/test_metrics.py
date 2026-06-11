@@ -61,6 +61,58 @@ def test_cadence_truncated_flag_when_all_in_window():
     assert c["in_window"] == 2
 
 
+def test_cadence_single_item_inside_window_is_truncated():
+    # One episode, inside the window: the oldest item is inside the window,
+    # so the feed may be capped and must be flagged (excluded from ranking).
+    data = {"episodes": [{"pubdate": "2026-06-01T00:00:00+00:00"}]}
+    c = M.cadence_per_month(data, now=NOW)
+    assert c["truncated"] is True
+    assert c["in_window"] == 1
+    assert c["per_month"] is not None
+
+
+def test_cadence_single_item_outside_window_not_truncated():
+    # One ancient episode: dormant show, cadence 0, no truncation suspicion.
+    data = {"episodes": [{"pubdate": "2020-01-01T00:00:00+00:00"}]}
+    c = M.cadence_per_month(data, now=NOW)
+    assert c["truncated"] is False
+    assert c["in_window"] == 0
+    assert c["per_month"] == 0.0
+
+
+def test_cadence_excludes_future_dated_episodes():
+    # A future-dated item has not published in the trailing window; counting
+    # it would inflate the published cadence.
+    data = {
+        "episodes": [
+            {"pubdate": "2026-07-01T00:00:00+00:00"},  # future vs NOW
+            {"pubdate": "2026-05-01T00:00:00+00:00"},
+            {"pubdate": "2025-01-01T00:00:00+00:00"},  # outside window
+        ]
+    }
+    c = M.cadence_per_month(data, now=NOW)
+    assert c["in_window"] == 1
+    assert c["future_dated"] == 1
+    assert c["truncated"] is False
+    assert c["per_month"] == pytest.approx(1 / (183 / 30.0), abs=0.01)
+
+
+def test_days_since_last_ignores_future_dated():
+    data = {
+        "episodes": [
+            {"pubdate": "2026-07-01T00:00:00+00:00"},  # future vs NOW
+            {"pubdate": "2026-06-01T00:00:00+00:00"},
+        ]
+    }
+    # Without the guard this would be negative.
+    assert M.days_since_last_episode(data, now=NOW) == 9
+
+
+def test_days_since_last_all_future_is_none():
+    data = {"episodes": [{"pubdate": "2026-07-01T00:00:00+00:00"}]}
+    assert M.days_since_last_episode(data, now=NOW) is None
+
+
 def test_transcript_pct(feed):
     # 3 of 5 episodes carry transcript tags.
     assert M.transcript_availability_pct(feed) == 60.0

@@ -51,10 +51,19 @@ def collect_show(
     rss = rr.data
     sources_meta["rss"] = {"fetched_at": rr.fetched_at, "ok": rr.ok}
 
+    # When the RSS fetch/parse failed entirely, feed-derived metrics must be
+    # N/A (None), never zeros: a 0/4 hygiene score or 0-item feed would be
+    # ranked as if it were real data.
+    rss_ok = rss is not None
     rss = rss or {"episodes": []}
 
     cadence = M.cadence_per_month(rss, now=now)
-    checklist = M.hygiene_checklist(rss)
+    checklist = M.hygiene_checklist(rss) if rss_ok else None
+    if cadence["future_dated"]:
+        warnings.append(
+            f"[{show.name}] rss: {cadence['future_dated']} future-dated "
+            "episode(s) excluded from cadence window and recency"
+        )
 
     computed = {
         "apple_rating_count": (apple or {}).get("user_rating_count"),
@@ -63,12 +72,13 @@ def collect_show(
         "cadence_per_month": cadence["per_month"],
         "cadence_in_window": cadence["in_window"],
         "cadence_window_truncated": cadence["truncated"],
+        "cadence_future_dated": cadence["future_dated"],
         "avg_duration_min": M.average_duration_min(rss),
         "transcript_pct": M.transcript_availability_pct(rss),
         "days_since_last_episode": M.days_since_last_episode(rss, now=now),
         "hygiene": checklist,
-        "hygiene_score": M.hygiene_score(checklist),
-        "feed_items_seen": rss.get("item_count_in_feed", 0),
+        "hygiene_score": M.hygiene_score(checklist) if checklist is not None else None,
+        "feed_items_seen": rss.get("item_count_in_feed", 0) if rss_ok else None,
     }
 
     return {
@@ -119,7 +129,15 @@ def build_benchmark(
                 "Apple's public lookup API does not expose ratings; rating "
                 "fields are N/A unless Apple restores them.",
                 "Cadence, duration, and transcript percentages are computed "
-                "from the episodes present in the live RSS feed window.",
+                "from the episodes present in the live RSS feed window. "
+                "Future-dated episodes are excluded from cadence and recency.",
+                "Feeds whose oldest item falls inside the cadence window are "
+                "flagged as possibly truncated and excluded from cadence "
+                "ranking.",
+                "Feed hygiene counts four channel-level signals: artwork "
+                "(itunes:image or image), at least one itunes:category, a "
+                "podcast:funding tag, and podcast:locked with value 'yes'. "
+                "It is N/A when the feed could not be fetched or parsed.",
                 "Catalog depth uses Apple trackCount, falling back to "
                 "Podcast Index episodeCount.",
                 "Downloads and chart positions are private/ToS-restricted and "
@@ -144,7 +162,20 @@ def _metric(show: dict, key: str) -> Any:
     return show["metrics"].get(key)
 
 
-def _ranking_block(title: str, ranked: dict, unit: str, subject_name: str) -> list[str]:
+def _ranking_block(
+    title: str,
+    ranked: dict,
+    unit: str,
+    subject_name: str,
+    truncated_names: list[str] | None = None,
+) -> list[str]:
+    """Render one ranking table.
+
+    ``truncated_names`` separates shows excluded because their feed window is
+    possibly truncated (they HAVE a value, it just can't be ranked fairly)
+    from shows excluded because the data is missing outright.
+    """
+    truncated_names = truncated_names or []
     lines = [f"### {title}", ""]
     if not ranked["ranked"]:
         lines.append("No show had data for this metric. Ranking omitted.")
@@ -156,11 +187,18 @@ def _ranking_block(title: str, ranked: dict, unit: str, subject_name: str) -> li
         mark = " (subject)" if name == subject_name else ""
         lines.append(f"| {i} | {name}{mark} | {value}{unit} |")
     lines.append("")
-    if ranked["excluded"]:
+    if truncated_names:
         lines.append(
-            "Excluded as N/A (no data, not ranked): "
-            + ", ".join(ranked["excluded"])
+            "Excluded (feed window possibly truncated by the host; value "
+            "reported in the overview but not ranked): "
+            + ", ".join(truncated_names)
             + "."
+        )
+        lines.append("")
+    na_names = [n for n in ranked["excluded"] if n not in truncated_names]
+    if na_names:
+        lines.append(
+            "Excluded as N/A (no data, not ranked): " + ", ".join(na_names) + "."
         )
         lines.append("")
     return lines
@@ -205,6 +243,7 @@ def render_markdown(doc: dict[str, Any]) -> str:
             cadence += " *"
         rating = m["apple_rating_count"]
         rating_cell = NA if rating is None else f"{rating} ({_fmt(m['apple_avg_rating'])})"
+        hygiene_cell = NA if m["hygiene_score"] is None else f"{m['hygiene_score']}/4"
         name = s["name"] + (" (subject)" if s["name"] == subject_name else "")
         row = [
             name,
@@ -213,7 +252,7 @@ def render_markdown(doc: dict[str, Any]) -> str:
             _fmt(m["avg_duration_min"]),
             _fmt(m["transcript_pct"]),
             _fmt(m["days_since_last_episode"]),
-            f"{m['hygiene_score']}/4",
+            hygiene_cell,
             rating_cell,
         ]
         out.append("| " + " | ".join(row) + " |")
@@ -238,6 +277,12 @@ def render_markdown(doc: dict[str, Any]) -> str:
             subject_name,
         )
     )
+    truncated_names = [
+        s["name"]
+        for s in shows
+        if s["metrics"]["cadence_window_truncated"]
+        and s["metrics"]["cadence_per_month"] is not None
+    ]
     out.extend(
         _ranking_block(
             "Publishing cadence (episodes/month, trailing 6 months)",
@@ -249,6 +294,7 @@ def render_markdown(doc: dict[str, Any]) -> str:
             ),
             "",
             subject_name,
+            truncated_names=truncated_names,
         )
     )
     out.extend(
@@ -320,7 +366,7 @@ def _findings(doc: dict[str, Any]) -> list[str]:
 
     sm = subject["metrics"]
 
-    def rank_of(metric_value_fn, truncate_aware=False) -> tuple[int, int] | None:
+    def rank_of(metric_value_fn) -> tuple[int, int] | None:
         ranked = rank_by(shows, metric_value_fn)["ranked"]
         names = [n for n, _ in ranked]
         if subject_name not in names:
@@ -335,6 +381,19 @@ def _findings(doc: dict[str, Any]) -> list[str]:
             f"ranked {r[0]} of {r[1]} shows with data."
         )
 
+    # Cadence (only when the subject's own window is not truncated).
+    r = rank_of(
+        lambda s: None
+        if s["metrics"]["cadence_window_truncated"]
+        else s["metrics"]["cadence_per_month"]
+    )
+    if r and sm["cadence_per_month"] is not None and not sm["cadence_window_truncated"]:
+        lines.append(
+            f"- Publishing cadence: {sm['cadence_per_month']} episodes/month "
+            f"over the trailing 6 months, ranked {r[0]} of {r[1]} shows with "
+            f"non-truncated feed windows."
+        )
+
     # Transcripts.
     r = rank_of(lambda s: s["metrics"]["transcript_pct"])
     if r and sm["transcript_pct"] is not None:
@@ -345,7 +404,7 @@ def _findings(doc: dict[str, Any]) -> list[str]:
 
     # Hygiene.
     r = rank_of(lambda s: s["metrics"]["hygiene_score"])
-    if r:
+    if r and sm["hygiene"] is not None:
         present = [k for k, v in sm["hygiene"].items() if v]
         absent = [k for k, v in sm["hygiene"].items() if not v]
         lines.append(

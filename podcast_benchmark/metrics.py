@@ -43,30 +43,38 @@ def cadence_per_month(
     """Episodes per month over the trailing window, computed from RSS pubdates.
 
     Returns a dict with the rate plus a ``truncated`` flag. The flag is True
-    when every episode in the feed falls inside the window, which means the
-    feed may be capping its item list and the rate could understate reality.
-    In that case the rate is still reported but flagged so the report can note
-    the caveat rather than rank on a possibly-truncated value.
+    when the oldest episode in the feed is itself inside the window, which
+    means the feed may be capping its item list and the rate could understate
+    reality. In that case the rate is still reported but flagged so the report
+    can exclude it from cadence ranking rather than rank on a possibly
+    truncated value.
+
+    Episodes dated in the future (relative to ``now``) have not happened in
+    the trailing window, so they are excluded from the count and reported in
+    ``future_dated`` so callers can warn about them.
     """
     now = now or datetime.now(timezone.utc)
     cutoff = now - timedelta(days=window_days)
     dates = episode_pubdates(rss_data)
 
     if not dates:
-        return {"per_month": None, "in_window": 0, "truncated": False}
+        return {"per_month": None, "in_window": 0, "truncated": False, "future_dated": 0}
 
-    in_window = [d for d in dates if d >= cutoff]
+    future_dated = sum(1 for d in dates if d > now)
+    in_window = [d for d in dates if cutoff <= d <= now]
     count = len(in_window)
     per_month = round(count / (window_days / 30.0), 2)
 
     # If the oldest episode in the feed is itself inside the window, the feed
-    # window may be truncated (e.g. Transistor serves only the last N items).
-    truncated = dates[-1] >= cutoff and count == len(dates)
+    # window may be truncated (e.g. a host serving only the last N items).
+    # This also covers the single-item-feed case.
+    truncated = dates[-1] >= cutoff
 
     return {
         "per_month": per_month,
         "in_window": count,
         "truncated": truncated,
+        "future_dated": future_dated,
     }
 
 
@@ -94,8 +102,13 @@ def transcript_availability_pct(rss_data: dict[str, Any]) -> float | None:
 def days_since_last_episode(
     rss_data: dict[str, Any], now: datetime | None = None
 ) -> int | None:
+    """Whole days since the newest episode that has actually been published.
+
+    Future-dated episodes (scheduling artifacts) are ignored so the metric
+    never goes negative.
+    """
     now = now or datetime.now(timezone.utc)
-    dates = episode_pubdates(rss_data)
+    dates = [d for d in episode_pubdates(rss_data) if d <= now]
     if not dates:
         return None
     return (now - dates[0]).days

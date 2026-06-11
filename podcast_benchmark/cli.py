@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 
 from .config import load_config
-from .report import build_benchmark, write_outputs
+from .report import build_benchmark, render_markdown, write_outputs
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -19,7 +20,11 @@ def main(argv: list[str] | None = None) -> int:
             "Does not estimate downloads or chart rank."
         ),
     )
-    parser.add_argument("config", help="Path to the YAML config file.")
+    parser.add_argument(
+        "config",
+        nargs="?",
+        help="Path to the YAML config file (omit with --from-json).",
+    )
     parser.add_argument(
         "-o",
         "--out-dir",
@@ -27,11 +32,39 @@ def main(argv: list[str] | None = None) -> int:
         help="Directory for benchmark.json and report.md (default: ./output).",
     )
     parser.add_argument(
+        "--from-json",
+        metavar="BENCHMARK_JSON",
+        help=(
+            "Re-render report.md from an existing benchmark.json instead of "
+            "fetching. No network access; writes report.md to --out-dir."
+        ),
+    )
+    parser.add_argument(
         "--quiet",
         action="store_true",
         help="Suppress the warning summary on stderr.",
     )
     args = parser.parse_args(argv)
+
+    if args.from_json:
+        try:
+            with open(args.from_json, "r", encoding="utf-8") as fh:
+                doc = json.load(fh)
+        except FileNotFoundError:
+            print(f"error: file not found: {args.from_json}", file=sys.stderr)
+            return 2
+        except json.JSONDecodeError as exc:
+            print(f"error: invalid JSON in {args.from_json}: {exc}", file=sys.stderr)
+            return 2
+        os.makedirs(args.out_dir, exist_ok=True)
+        md_path = os.path.join(args.out_dir, "report.md")
+        with open(md_path, "w", encoding="utf-8") as fh:
+            fh.write(render_markdown(doc))
+        print(f"wrote {md_path}")
+        return 0
+
+    if not args.config:
+        parser.error("config is required unless --from-json is given")
 
     try:
         config = load_config(args.config)

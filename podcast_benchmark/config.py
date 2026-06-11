@@ -75,6 +75,18 @@ def _coerce_scalar(value: str) -> Any:
     return value
 
 
+def _strip_comment(line: str) -> str:
+    """Strip a YAML comment: '#' at line start or preceded by whitespace.
+
+    A bare '#' inside a value (e.g. a URL fragment) is NOT a comment, matching
+    YAML semantics.
+    """
+    for i, ch in enumerate(line):
+        if ch == "#" and (i == 0 or line[i - 1] in " \t"):
+            return line[:i]
+    return line
+
+
 def _mini_yaml(text: str) -> dict[str, Any]:
     """Minimal YAML parser for the constrained config shape.
 
@@ -89,7 +101,7 @@ def _mini_yaml(text: str) -> dict[str, Any]:
     current_peer: dict[str, Any] | None = None
 
     for raw_line in text.splitlines():
-        line = raw_line.split("#", 1)[0].rstrip()
+        line = _strip_comment(raw_line).rstrip()
         if not line.strip():
             continue
         indent = len(line) - len(line.lstrip(" "))

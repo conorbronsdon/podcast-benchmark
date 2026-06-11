@@ -41,3 +41,13 @@ def test_missing_feed_url_raises():
     bad = "subject:\n  name: NoFeed\n"
     with pytest.raises(ValueError):
         parse_config(bad)
+
+
+def test_hash_in_url_is_not_a_comment():
+    cfg_text = (
+        "subject:\n"
+        "  name: Frag Show\n"
+        "  feed_url: https://example.com/feed.rss#fragment  # trailing comment\n"
+    )
+    cfg = parse_config(cfg_text)
+    assert cfg.subject.feed_url == "https://example.com/feed.rss#fragment"
