@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "podcast-benchmark"
+version = "0.1.0"
+description = "Benchmark a podcast against a peer set using only public data."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Conor Bronsdon" }]
+dependencies = ["requests>=2.28"]
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+podcast-benchmark = "podcast_benchmark.cli:main"
+
+[tool.setuptools]
+packages = ["podcast_benchmark"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <title>Fixture Show</title>
+    <itunes:image href="https://example.com/art.jpg"/>
+    <itunes:category text="Technology"/>
+    <itunes:category text="Business"/>
+    <podcast:funding url="https://example.com/support">Support us</podcast:funding>
+    <podcast:locked>yes</podcast:locked>
+
+    <item>
+      <title>Ep 5</title>
+      <pubDate>Mon, 01 Jun 2026 10:00:00 +0000</pubDate>
+      <itunes:duration>3600</itunes:duration>
+      <description>A solid description with enough text to count.</description>
+      <podcast:transcript url="https://example.com/5.txt" type="text/plain"/>
+    </item>
+
+    <item>
+      <title>Ep 4</title>
+      <pubDate>Mon, 04 May 2026 10:00:00 +0000</pubDate>
+      <itunes:duration>00:30:00</itunes:duration>
+      <description>Another description.</description>
+      <podcast:transcript url="https://example.com/4.vtt" type="text/vtt"/>
+    </item>
+
+    <item>
+      <title>Ep 3</title>
+      <pubDate>Mon, 06 Apr 2026 10:00:00 +0000</pubDate>
+      <itunes:duration>1800</itunes:duration>
+      <description>Short.</description>
+    </item>
+
+    <item>
+      <title>Ep 2</title>
+      <pubDate>Mon, 03 Feb 2025 10:00:00 +0000</pubDate>
+      <itunes:duration>2400</itunes:duration>
+      <description>Old episode outside the 6-month window.</description>
+      <podcast:transcript url="https://example.com/2.txt" type="text/plain"/>
+    </item>
+
+    <item>
+      <title>Ep 1 (no duration)</title>
+      <pubDate>Mon, 06 Jan 2025 10:00:00 +0000</pubDate>
+      <description>Oldest, no duration tag.</description>
+    </item>
+  </channel>
+</rss>

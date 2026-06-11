@@ -1,0 +1,31 @@
+# podcast-benchmark example config.
+# Subject podcast plus a peer set of AI-engineering shows.
+# Feed URLs and Apple IDs verified to resolve as of June 2026.
+
+subject:
+  name: Chain of Thought
+  feed_url: https://feeds.transistor.fm/chain-of-thought
+  apple_id: 1776879655
+
+peers:
+  - name: Latent Space
+    feed_url: https://api.substack.com/feed/podcast/1084089.rss
+    apple_id: 1674008350
+  - name: Practical AI
+    feed_url: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm
+    apple_id: 1406537385
+  - name: The TWIML AI Podcast
+    feed_url: https://feeds.megaphone.fm/MLN2155636147
+    apple_id: 1116303051
+  - name: Gradient Dissent
+    feed_url: https://feeds.captivate.fm/gradient-dissent/
+    apple_id: 1504567418
+  - name: AI Engineering Podcast
+    feed_url: https://serve.podhome.fm/rss/c9abdd38-a5dc-5eb2-96fd-f833f93208a7
+    apple_id: 1626358243
+  - name: No Priors
+    feed_url: https://feeds.megaphone.fm/nopriors
+    apple_id: 1668002688
+  - name: The Cognitive Revolution
+    feed_url: https://feeds.megaphone.fm/RINTP3108857801
+    apple_id: 1669813431
