@@ -16,14 +16,19 @@ All of these come from public sources. None of them are estimated or invented.
 - Catalog depth: total episode count (Apple `trackCount`, falling back to
   Podcast Index `episodeCount`).
 - Publishing cadence: episodes per month over the trailing six months,
-  computed from the live RSS feed.
+  computed from the live RSS feed. Future-dated items are excluded (and
+  warned about), and feeds whose oldest item falls inside the window are
+  flagged as possibly truncated and left out of the cadence ranking.
 - Average episode duration: mean minutes across episodes that report a
   duration in the feed.
 - Transcript availability: percent of in-feed episodes that carry a
-  `podcast:transcript` tag.
-- Feed hygiene: a four-point checklist (artwork, categories, funding tag,
-  locked tag) read from the RSS channel.
-- Days since last episode: recency, from the newest feed pubdate.
+  `podcast:transcript` tag (any of the namespace URI variants seen in the
+  wild).
+- Feed hygiene: a four-point checklist read from the RSS channel: artwork
+  (`itunes:image` or `image`), at least one `itunes:category`, a
+  `podcast:funding` tag, and `podcast:locked` with the value `yes`. N/A when
+  the feed could not be fetched or parsed.
+- Days since last episode: recency, from the newest non-future feed pubdate.
 - Apple rating count and average: read if Apple exposes them. See the
   limitations section. Today they come back as N/A.
 
@@ -61,6 +66,19 @@ python -m podcast_benchmark.cli config.example.yaml -o output
 This writes `output/benchmark.json` and `output/report.md`. Any source that
 fails for a show degrades to N/A and is listed in a warnings section, never
 dropped silently.
+
+### Regenerating the report from cached data
+
+`benchmark.json` contains everything the report needs, so `report.md` can be
+re-rendered without touching the network:
+
+```bash
+python -m podcast_benchmark.cli --from-json output/benchmark.json -o output
+```
+
+This is the reproducibility path: anyone holding the JSON can regenerate the
+exact report, and rendering changes can be re-applied to old runs without
+refetching.
 
 ### Podcast Index (optional)
 

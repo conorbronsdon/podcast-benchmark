@@ -80,6 +80,7 @@ No show had data for this metric. Ranking omitted.
 ## Findings
 
 - Catalog depth: 62 episodes, ranked 8 of 8 shows with data.
+- Publishing cadence: 2.62 episodes/month over the trailing 6 months, ranked 5 of 8 shows with non-truncated feed windows.
 - Transcript availability: 98.4% of in-feed episodes, ranked 1 of 8.
 - Feed hygiene: 3/4 signals present (artwork, categories, locked_tag; missing: funding_tag), ranked 1 of 8.
 - Average episode duration in the feed window: 45.4 minutes.
