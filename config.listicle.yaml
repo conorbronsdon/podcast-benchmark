@@ -1,0 +1,38 @@
+# 10-show config for the off-property listicle draft (cot-site #38 / PR #63).
+# Extends config.example.yaml with the two shows the listicle covers without
+# data (Dwarkesh, MLOps.community), so all entries can carry verified numbers.
+# Feed URLs from the iTunes search API, 2026-06-11.
+
+subject:
+  name: Chain of Thought
+  feed_url: https://feeds.transistor.fm/chain-of-thought
+  apple_id: 1776879655
+
+peers:
+  - name: Latent Space
+    feed_url: https://api.substack.com/feed/podcast/1084089.rss
+    apple_id: 1674008350
+  - name: Practical AI
+    feed_url: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm
+    apple_id: 1406537385
+  - name: The TWIML AI Podcast
+    feed_url: https://feeds.megaphone.fm/MLN2155636147
+    apple_id: 1116303051
+  - name: Gradient Dissent
+    feed_url: https://feeds.captivate.fm/gradient-dissent/
+    apple_id: 1504567418
+  - name: AI Engineering Podcast
+    feed_url: https://serve.podhome.fm/rss/c9abdd38-a5dc-5eb2-96fd-f833f93208a7
+    apple_id: 1626358243
+  - name: No Priors
+    feed_url: https://feeds.megaphone.fm/nopriors
+    apple_id: 1668002688
+  - name: The Cognitive Revolution
+    feed_url: https://feeds.megaphone.fm/RINTP3108857801
+    apple_id: 1669813431
+  - name: Dwarkesh Podcast
+    feed_url: https://apple.dwarkesh-podcast.workers.dev/feed.rss
+    apple_id: 1516093381
+  - name: MLOps.community
+    feed_url: https://anchor.fm/s/174cb1b8/podcast/rss
+    apple_id: 1505372978
