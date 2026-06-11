@@ -205,13 +205,21 @@ def fetch_podcastindex(
 # --------------------------------------------------------------------------- #
 # RSS feed
 # --------------------------------------------------------------------------- #
-def fetch_rss(feed_url: str, session: requests.Session | None = None) -> SourceResult:
+def fetch_rss(
+    feed_url: str,
+    session: requests.Session | None = None,
+    include_text: bool = False,
+) -> SourceResult:
     """Fetch and parse an RSS feed into a normalized dict.
 
     Pulls per-episode pubDate, duration, and transcript presence plus
     channel-level hygiene signals (artwork, categories, funding, locked).
     Parsing is done with the stdlib XML parser so the only third-party
     dependency is requests.
+
+    ``include_text=True`` additionally carries each episode's title and raw
+    description text (used by sponsor-intel scanning). The benchmark path
+    leaves it off so benchmark.json stays compact.
     """
     sess = session or requests
     res = SourceResult(fetched_at=_now_iso())
@@ -224,7 +232,7 @@ def fetch_rss(feed_url: str, session: requests.Session | None = None) -> SourceR
         return res
 
     try:
-        res.data = parse_rss_bytes(raw)
+        res.data = parse_rss_bytes(raw, include_text=include_text)
     except Exception as exc:  # noqa: BLE001
         res.warnings.append(f"rss: parse for {feed_url} failed: {exc}")
     return res
@@ -281,7 +289,7 @@ def _parse_pubdate(text: str | None) -> datetime | None:
     return dt.astimezone(timezone.utc)
 
 
-def parse_rss_bytes(raw: bytes) -> dict[str, Any]:
+def parse_rss_bytes(raw: bytes, include_text: bool = False) -> dict[str, Any]:
     """Parse raw RSS bytes into the normalized feed dict. Pure function."""
     root = ET.fromstring(raw)
     channel = root.find("channel")
@@ -318,15 +326,17 @@ def parse_rss_bytes(raw: bytes) -> dict[str, Any]:
             or (summary_el.text if summary_el is not None else None)
             or ""
         )
-        episodes.append(
-            {
-                "pubdate_raw": pub_raw,
-                "pubdate": pub_dt.isoformat() if pub_dt else None,
-                "duration_sec": dur,
-                "has_transcript": has_transcript,
-                "description_length": len(description.strip()),
-            }
-        )
+        entry: dict[str, Any] = {
+            "pubdate_raw": pub_raw,
+            "pubdate": pub_dt.isoformat() if pub_dt else None,
+            "duration_sec": dur,
+            "has_transcript": has_transcript,
+            "description_length": len(description.strip()),
+        }
+        if include_text:
+            entry["title"] = (item.findtext("title") or "").strip()
+            entry["description"] = description
+        episodes.append(entry)
 
     return {
         "channel_title": title,
