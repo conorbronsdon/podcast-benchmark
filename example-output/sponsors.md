@@ -1,6 +1,6 @@
 # Sponsor Intel: Chain of Thought peer set
 
-Generated 2026-06-11T07:55:06Z by podcast-benchmark v0.2.0.
+Generated 2026-06-12T03:35:37Z by podcast-benchmark v0.2.0.
 
 **Read this first:** many sponsor reads are audio-only and never appear in episode descriptions, so absence of a detection here is NOT absence of sponsorship. This list is a floor, not a census, and every name below is a heuristic candidate that needs human confirmation.
 
@@ -8,9 +8,9 @@ Generated 2026-06-11T07:55:06Z by podcast-benchmark v0.2.0.
 
 | Show | Episodes scanned | Episodes with sponsor signals |
 | ---- | ---- | ---- |
-| Chain of Thought | 62 | 2 |
+| Chain of Thought | 63 | 2 |
 | Latent Space | 207 | 8 |
-| Practical AI | 361 | 21 |
+| Practical AI | 362 | 21 |
 | The TWIML AI Podcast | 787 | 6 |
 | Gradient Dissent | 137 | 12 |
 | AI Engineering Podcast | 79 | 0 |

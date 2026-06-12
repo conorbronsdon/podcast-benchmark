@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-11T07:55:06Z",
+  "generated_at": "2026-06-12T03:35:37Z",
   "tool_version": "0.2.0",
   "subject": "Chain of Thought",
   "shows": [
     {
       "name": "Chain of Thought",
-      "episodes_scanned": 62,
+      "episodes_scanned": 63,
       "episodes_with_mentions": 2,
       "mention_hits": [
         {
@@ -175,7 +175,7 @@
     },
     {
       "name": "Practical AI",
-      "episodes_scanned": 361,
+      "episodes_scanned": 362,
       "episodes_with_mentions": 21,
       "mention_hits": [
         {
