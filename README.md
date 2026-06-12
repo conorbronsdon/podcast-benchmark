@@ -9,6 +9,8 @@ Benchmark any podcast against a peer set using only public data. No download est
 [![Podcast](https://img.shields.io/badge/Podcast-Chain_of_Thought-purple?style=flat-square)](https://chainofthought.show)
 [![X](https://img.shields.io/badge/X-@ConorBronsdon-black?style=flat-square&logo=x)](https://x.com/ConorBronsdon)
 
+<img src="docs/demo.gif" alt="Demo: running podcast-benchmark on the example config, then the overview table from the generated report" width="800">
+
 </div>
 
 ---
