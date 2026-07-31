@@ -6,7 +6,7 @@ Benchmark any podcast against a peer set using only public data. No download est
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Podcast](https://img.shields.io/badge/Podcast-Chain_of_Thought-purple?style=flat-square)](https://chainofthought.show)
+[![Podcast](https://img.shields.io/badge/Podcast-Chain_of_Thought-purple?style=flat-square)](https://chainofthought.show/?utm_source=github&utm_medium=referral&utm_campaign=repo-readme&utm_content=podcast-benchmark)
 [![X](https://img.shields.io/badge/X-@ConorBronsdon-black?style=flat-square&logo=x)](https://x.com/ConorBronsdon)
 
 <img src="docs/demo.gif" alt="Demo: running podcast-benchmark on the example config, then the overview table from the generated report" width="800">
@@ -18,7 +18,7 @@ Benchmark any podcast against a peer set using only public data. No download est
 
 A command-line tool that compares a podcast against a set of peers using only public data. It produces two files: a `benchmark.json` with every raw number and fetch timestamp, and a `report.md` with ranked comparison tables and a short findings section.
 
-It was built to generate the data half of a citable benchmark report for the [Chain of Thought](https://chainofthought.show) podcast, but it works for any show. Point it at a config that lists your podcast and a peer set, and it does the rest. If you run a podcast and want an honest read on where you stand, this is for you.
+It was built to generate the data half of a citable benchmark report for the [Chain of Thought](https://chainofthought.show/?utm_source=github&utm_medium=referral&utm_campaign=repo-readme&utm_content=podcast-benchmark) podcast, but it works for any show. Point it at a config that lists your podcast and a peer set, and it does the rest. If you run a podcast and want an honest read on where you stand, this is for you.
 
 ## What it measures
 
@@ -151,7 +151,7 @@ Issues and pull requests are welcome. If you hit a feed format the parser mishan
 
 ## About
 
-Built and maintained by [Conor Bronsdon](https://github.com/conorbronsdon). I host the [Chain of Thought](https://chainofthought.show) podcast, which covers AI infrastructure, developer tools, and how practitioners actually use this stuff. This tool came out of the show's growth work: I wanted an honest, repeatable way to see where Chain of Thought stands against its peers without leaning on numbers nobody can verify.
+Built and maintained by [Conor Bronsdon](https://github.com/conorbronsdon). I host the [Chain of Thought](https://chainofthought.show/?utm_source=github&utm_medium=referral&utm_campaign=repo-readme&utm_content=podcast-benchmark) podcast, which covers AI infrastructure, developer tools, and how practitioners actually use this stuff. This tool came out of the show's growth work: I wanted an honest, repeatable way to see where Chain of Thought stands against its peers without leaning on numbers nobody can verify.
 
 Companion tools:
 
@@ -159,7 +159,7 @@ Companion tools:
 - [podcastindex-mcp](https://github.com/conorbronsdon/podcastindex-mcp): the Podcast Index MCP server, the same API this tool uses to corroborate episode counts.
 - [ai-tools-for-creators](https://github.com/conorbronsdon/ai-tools-for-creators): a curated list of AI skills and MCP servers for people who ship ideas for a living.
 
-More at [chainofthought.show](https://chainofthought.show) and on [X](https://x.com/ConorBronsdon).
+More at [chainofthought.show](https://chainofthought.show/?utm_source=github&utm_medium=referral&utm_campaign=repo-readme&utm_content=podcast-benchmark) and on [X](https://x.com/ConorBronsdon).
 
 ---
 
