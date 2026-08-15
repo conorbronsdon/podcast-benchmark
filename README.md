@@ -40,6 +40,16 @@ All of these come from public sources. None of them are estimated or invented.
 
 The report leads with a sentence saying it benchmarks public signals, not downloads, so a reader is never misled about what the numbers mean.
 
+## What this can't see, and what can
+
+This tool benchmarks the layer where public data is real: catalog shape, publishing cadence, episode length, transcript coverage, and feed hygiene. Prefer ratios and patterns over invented magnitudes. Publishing frequency and median length can reveal a show's strategy without claiming to know its downloads.
+
+Owner-side analytics are the private complement to this public benchmark:
+
+- [op3-mcp](https://github.com/conorbronsdon/op3-mcp) reads a show's own download, geography, and app analytics from OP3.
+- [apple-podcasts-mcp](https://github.com/conorbronsdon/apple-podcasts-mcp) targets owner analytics from Apple Podcasts Reporter. It requires a paid Apple Podcasters Program membership, and the repository has not yet been checked against a live Apple account.
+- [Transistor](https://transistor.fm/) gives its hosting customers private show and episode analytics.
+
 ## Install
 
 Requires Python 3.11 or newer.
@@ -136,6 +146,8 @@ The JSON is the source of record. A reports page can read `benchmark.json` direc
 - Cadence, duration, and transcript percentages are computed from the episodes a feed actually serves. Some hosts cap the feed to the most recent items. When every episode in a feed falls inside the six-month window, the cadence value is flagged with an asterisk and excluded from the cadence ranking, because the true rate may be higher than what the window shows.
 - Transcript availability reflects the `podcast:transcript` RSS tag only. A show can publish transcripts on its website without emitting the tag, in which case it reads as 0 percent here. The metric measures feed-declared transcripts, not all transcripts that exist.
 - Catalog depth from different sources can differ by a few episodes depending on trailers and crawl timing. The tool prefers Apple and records which source it used in the JSON.
+- Spotify is not a source because its public API exposes no listener metrics; the one comparable public field, catalog count, duplicates Apple's `trackCount`.
+- Third-party listener and download estimators are out of scope. Their modeled figures cannot satisfy the tool's no-estimates, traceable-source contract.
 
 ## Tests
 
@@ -156,6 +168,7 @@ Built and maintained by [Conor Bronsdon](https://github.com/conorbronsdon). I ho
 Companion tools:
 
 - [op3-mcp](https://github.com/conorbronsdon/op3-mcp): your own download, geography, and app analytics through OP3, the part this benchmark deliberately leaves out.
+- [apple-podcasts-mcp](https://github.com/conorbronsdon/apple-podcasts-mcp) *(paid Apple Podcasters Program membership required; not yet checked against a live Apple account)*: owner-side Apple Podcasts Reporter analytics.
 - [podcastindex-mcp](https://github.com/conorbronsdon/podcastindex-mcp): the Podcast Index MCP server, the same API this tool uses to corroborate episode counts.
 - [ai-tools-for-creators](https://github.com/conorbronsdon/ai-tools-for-creators): a curated list of AI skills and MCP servers for people who ship ideas for a living.
 
