@@ -2,6 +2,8 @@
 
 # podcast-benchmark
 
+> **Maintenance mode.** This project is stable and receives security fixes. New features aren't planned, but issues and pull requests are still welcome.
+
 Benchmark any podcast against a peer set using only public data. No download estimates, no scraping, no guesses.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
