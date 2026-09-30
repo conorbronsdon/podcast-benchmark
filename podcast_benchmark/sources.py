@@ -209,10 +209,12 @@ def fetch_podcastindex(
 # YouTube (optional)
 # --------------------------------------------------------------------------- #
 YOUTUBE_CHANNELS_URL = "https://www.googleapis.com/youtube/v3/channels"
-# A channel ID is "UC" plus 22 URL-safe base64 characters. Handles are 3-30
-# characters of letters, digits, underscores, hyphens and periods.
+# A channel ID is "UC" plus 22 URL-safe base64 characters. Handles allow
+# international letters with script-specific length rules, so only obvious
+# junk (whitespace, separators, control characters) is rejected here and
+# YouTube decides the rest.
 YOUTUBE_CHANNEL_ID_RE = re.compile(r"^UC[A-Za-z0-9_-]{22}$")
-YOUTUBE_HANDLE_RE = re.compile(r"^@[A-Za-z0-9._-]{3,30}$")
+YOUTUBE_HANDLE_RE = re.compile(r"^@[^\s,/?#&@\x00-\x1f\x7f]{1,100}$")
 # Google API keys are URL-safe tokens. Anything else is rejected before it is
 # put in a header, so a malformed key can't surface in an exception message.
 YOUTUBE_KEY_RE = re.compile(r"^[A-Za-z0-9_-]{10,200}$")
@@ -234,7 +236,9 @@ def _count(value: Any) -> int | None:
         return None
     if isinstance(value, int):
         return value if value >= 0 else None
-    if isinstance(value, str) and value.isascii() and value.isdigit():
+    # 20 digits covers any real count and keeps int() clear of its
+    # digit-length limit, which would raise instead of returning N/A.
+    if isinstance(value, str) and value.isascii() and value.isdigit() and len(value) <= 20:
         return int(value)
     return None
 

@@ -65,10 +65,10 @@ class Show:
             )
         if yt_handle and not yt_handle.startswith("@"):
             yt_handle = "@" + yt_handle
-        if yt_handle and not re.fullmatch(r"@[A-Za-z0-9._-]{3,30}", yt_handle):
+        if yt_handle and not re.fullmatch(r"@[^\s,/?#&@\x00-\x1f\x7f]{1,100}", yt_handle):
             raise ValueError(
                 f"config: {where} ('{name}') youtube_handle {yt_handle!r} is not "
-                "a valid handle (3-30 letters, digits, '.', '_' or '-')"
+                "a single handle (no spaces or separators)"
             )
         return cls(
             name=str(name),

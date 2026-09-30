@@ -196,7 +196,8 @@ def test_response_for_another_channel_is_rejected():
 @pytest.mark.parametrize(
     ("value", "expected"),
     [("123", 123), ("0", 0), (5, 5), (True, None), (False, None), (0.9, None), (1.9, None),
-     (float("inf"), None), ("-5", None), ("1e3", None), ("n/a", None), (None, None), ("１２", None)],
+     (float("inf"), None), ("-5", None), ("1e3", None), ("n/a", None), (None, None), ("１２", None),
+     ("9" * 20, int("9" * 20)), ("9" * 4301, None)],
 )
 def test_count_coercion_never_invents_values(value, expected):
     data = yt(channel(views=value)).data
@@ -242,7 +243,8 @@ def test_config_accepts_handle_with_or_without_at():
         (f"  youtube_channel_id: {SUBJECT}\n  youtube_handle: show", "use one"),
         ("  youtube_channel_id: show", "one channel ID"),
         (f"  youtube_channel_id: {SUBJECT},{PEER}", "one channel ID"),
-        ('  youtube_handle: "@a b"', "not a valid handle"),
+        ('  youtube_handle: "@a b"', "not a single handle"),
+        ('  youtube_handle: "@a,@b"', "not a single handle"),
     ],
 )
 def test_config_rejects_ambiguous_or_malformed_channels(extra, message):
@@ -362,3 +364,11 @@ def test_handle_lookup_with_several_channels_is_rejected():
     res = fetch_youtube(None, "@peer", FAKE_KEY, session=RecordingSession({"@peer": two}))
     assert res.data is None
     assert res.warnings == ["youtube: unexpected response shape for @peer (N/A)"]
+
+
+def test_international_handles_are_accepted():
+    handle = "@caf\u00e9podcast"
+    cfg = parse_config(BASE.format(extra=f'  youtube_handle: "{handle}"'))
+    assert cfg.subject.youtube_handle == handle
+    sess = RecordingSession({handle: channel(cid=PEER)})
+    assert fetch_youtube(None, handle, FAKE_KEY, session=sess).data["channel_id"] == PEER
