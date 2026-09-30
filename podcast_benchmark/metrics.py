@@ -145,6 +145,7 @@ def youtube_metrics(yt_data: dict | None) -> dict[str, int | None]:
         "youtube_subscribers": yt.get("subscriber_count"),
         "youtube_total_views": yt.get("view_count"),
         "youtube_video_count": yt.get("video_count"),
+        "youtube_subscribers_hidden": yt.get("hidden_subscriber_count") is True,
     }
 
 

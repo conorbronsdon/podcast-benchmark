@@ -499,8 +499,10 @@ def _findings(doc: dict[str, Any]) -> list[str]:
     if views is not None:
         r = rank_of(lambda s: s["metrics"].get("youtube_total_views"))
         subs = sm.get("youtube_subscribers")
-        if subs is None:
-            subs_txt = "hidden"
+        if subs is None and sm.get("youtube_subscribers_hidden"):
+            subs_txt = "hidden by the channel"
+        elif subs is None:
+            subs_txt = NA
         elif M.subscriber_count_is_rounded(subs):
             subs_txt = f"about {subs:,} (rounded by YouTube)"
         else:

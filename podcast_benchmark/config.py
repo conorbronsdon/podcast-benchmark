@@ -22,6 +22,7 @@ built-in mini-parser handles this exact structure.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Any
 
@@ -56,13 +57,19 @@ class Show:
                 f"config: {where} ('{name}') sets both youtube_channel_id and "
                 "youtube_handle; use one"
             )
-        if yt_id and not yt_id.startswith("UC"):
+        if yt_id and not re.fullmatch(r"UC[A-Za-z0-9_-]{22}", yt_id):
             raise ValueError(
-                f"config: {where} ('{name}') youtube_channel_id should start with "
-                "'UC'; use youtube_handle for an @handle"
+                f"config: {where} ('{name}') youtube_channel_id should be one "
+                "channel ID ('UC' plus 22 characters); use youtube_handle for "
+                "an @handle"
             )
         if yt_handle and not yt_handle.startswith("@"):
             yt_handle = "@" + yt_handle
+        if yt_handle and not re.fullmatch(r"@[A-Za-z0-9._-]{3,30}", yt_handle):
+            raise ValueError(
+                f"config: {where} ('{name}') youtube_handle {yt_handle!r} is not "
+                "a valid handle (3-30 letters, digits, '.', '_' or '-')"
+            )
         return cls(
             name=str(name),
             feed_url=str(feed_url),

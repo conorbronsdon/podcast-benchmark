@@ -14,6 +14,7 @@ as warnings rather than silent gaps. Nothing here invents numbers.
 from __future__ import annotations
 
 import hashlib
+import re
 import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -208,6 +209,13 @@ def fetch_podcastindex(
 # YouTube (optional)
 # --------------------------------------------------------------------------- #
 YOUTUBE_CHANNELS_URL = "https://www.googleapis.com/youtube/v3/channels"
+# A channel ID is "UC" plus 22 URL-safe base64 characters. Handles are 3-30
+# characters of letters, digits, underscores, hyphens and periods.
+YOUTUBE_CHANNEL_ID_RE = re.compile(r"^UC[A-Za-z0-9_-]{22}$")
+YOUTUBE_HANDLE_RE = re.compile(r"^@[A-Za-z0-9._-]{3,30}$")
+# Google API keys are URL-safe tokens. Anything else is rejected before it is
+# put in a header, so a malformed key can't surface in an exception message.
+YOUTUBE_KEY_RE = re.compile(r"^[A-Za-z0-9_-]{10,200}$")
 
 
 def _redact(text: str, secret: str | None) -> str:
@@ -216,12 +224,25 @@ def _redact(text: str, secret: str | None) -> str:
 
 
 def _count(value: Any) -> int | None:
-    """YouTube returns counts as decimal strings. Anything else is N/A."""
-    try:
-        n = int(value)
-    except (TypeError, ValueError):
+    """A non-negative integer count, or None.
+
+    YouTube returns counts as decimal strings. Booleans, floats and anything
+    that isn't a plain digit string are N/A rather than coerced (int(True) is
+    1 and int(0.9) is 0, which would be invented observations).
+    """
+    if isinstance(value, bool):
         return None
-    return n if n >= 0 else None
+    if isinstance(value, int):
+        return value if value >= 0 else None
+    if isinstance(value, str) and value.isascii() and value.isdigit():
+        return int(value)
+    return None
+
+
+def _failure(exc: Exception) -> str:
+    """Describe a request failure without echoing request text (URL, headers)."""
+    status = getattr(getattr(exc, "response", None), "status_code", None)
+    return f"HTTP {status}" if status else type(exc).__name__
 
 
 def fetch_youtube(
@@ -233,18 +254,30 @@ def fetch_youtube(
     """Channel-level statistics from the YouTube Data API (channels.list).
 
     API key only, no OAuth; one quota unit per call. The key travels in the
-    ``X-Goog-Api-Key`` header, not the URL, and is scrubbed from any error
-    text, so it never lands in warnings or benchmark.json.
+    ``X-Goog-Api-Key`` header, not the URL; redirects are refused so the
+    header can't be forwarded to another host; and failure warnings carry
+    only an HTTP status or exception type, so the key never lands in
+    warnings or benchmark.json.
 
-    Returns None data (with a warning) when the key is absent. A channel
-    that hides its subscriber count yields ``subscriber_count`` None, never 0.
+    Returns None data (with a warning) when the key is absent or malformed,
+    or the response isn't the one channel asked for. A channel that hides its
+    subscriber count yields ``subscriber_count`` None, never 0.
     """
     res = SourceResult(fetched_at=_now_iso())
     label = channel_id or handle
     if not label:
         return res
+    if channel_id and not YOUTUBE_CHANNEL_ID_RE.match(channel_id):
+        res.warnings.append(f"youtube: {channel_id!r} is not a single channel ID (skipped)")
+        return res
+    if not channel_id and not YOUTUBE_HANDLE_RE.match(handle):
+        res.warnings.append(f"youtube: {handle!r} is not a valid handle (skipped)")
+        return res
     if not key:
         res.warnings.append(f"youtube: skipped for {label} (YOUTUBE_API_KEY unset)")
+        return res
+    if not YOUTUBE_KEY_RE.match(key):
+        res.warnings.append(f"youtube: skipped for {label} (YOUTUBE_API_KEY is malformed)")
         return res
 
     params = {"part": "snippet,statistics"}
@@ -259,24 +292,38 @@ def fetch_youtube(
             params=params,
             headers={"User-Agent": USER_AGENT, "X-Goog-Api-Key": key},
             timeout=DEFAULT_TIMEOUT,
+            allow_redirects=False,
         )
+        status = getattr(resp, "status_code", 200)
+        if 300 <= status < 400:
+            res.warnings.append(f"youtube: lookup for {label} redirected (HTTP {status}); refused")
+            return res
         resp.raise_for_status()
         payload = resp.json()
     except Exception as exc:  # noqa: BLE001 - degrade, never crash
-        res.warnings.append(_redact(f"youtube: lookup for {label} failed: {exc}", key))
+        res.warnings.append(_redact(f"youtube: lookup for {label} failed: {_failure(exc)}", key))
         return res
 
-    items = payload.get("items") or []
+    items = payload.get("items") if isinstance(payload, dict) else None
     if not items:
         res.warnings.append(f"youtube: no channel found for {label}")
         return res
+    if not isinstance(items, list) or len(items) != 1 or not isinstance(items[0], dict):
+        res.warnings.append(f"youtube: unexpected response shape for {label} (N/A)")
+        return res
 
     item = items[0]
-    stats = item.get("statistics") or {}
-    hidden = bool(stats.get("hiddenSubscriberCount"))
+    if channel_id and item.get("id") != channel_id:
+        res.warnings.append(f"youtube: response for {label} named a different channel (N/A)")
+        return res
+    stats = item.get("statistics")
+    snippet = item.get("snippet")
+    stats = stats if isinstance(stats, dict) else {}
+    snippet = snippet if isinstance(snippet, dict) else {}
+    hidden = stats.get("hiddenSubscriberCount") is True
     res.data = {
-        "channel_id": item.get("id"),
-        "title": (item.get("snippet") or {}).get("title"),
+        "channel_id": item.get("id") if isinstance(item.get("id"), str) else None,
+        "title": snippet.get("title") if isinstance(snippet.get("title"), str) else None,
         "subscriber_count": None if hidden else _count(stats.get("subscriberCount")),
         "hidden_subscriber_count": hidden,
         "view_count": _count(stats.get("viewCount")),
