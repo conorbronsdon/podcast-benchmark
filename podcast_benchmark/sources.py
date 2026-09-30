@@ -1,9 +1,11 @@
 """Public data sources for podcast benchmarking.
 
-Three sources, all public:
+Four sources, all public:
   - Apple iTunes lookup API (no auth)
   - Podcast Index API (free key, optional, degrades to None without it)
   - The RSS feed itself (no auth)
+  - YouTube Data API channel statistics (free API key, optional, degrades
+    to None without it)
 
 Every fetch returns a (data, warnings) shaped result so failures surface
 as warnings rather than silent gaps. Nothing here invents numbers.
@@ -199,6 +201,89 @@ def fetch_podcastindex(
         "locked": feed.get("locked"),
         "last_http_status": feed.get("lastHttpStatus"),
     }
+    return res
+
+
+# --------------------------------------------------------------------------- #
+# YouTube (optional)
+# --------------------------------------------------------------------------- #
+YOUTUBE_CHANNELS_URL = "https://www.googleapis.com/youtube/v3/channels"
+
+
+def _redact(text: str, secret: str | None) -> str:
+    """Remove a secret from text that may echo a request (e.g. an HTTPError)."""
+    return text.replace(secret, "[redacted]") if secret else text
+
+
+def _count(value: Any) -> int | None:
+    """YouTube returns counts as decimal strings. Anything else is N/A."""
+    try:
+        n = int(value)
+    except (TypeError, ValueError):
+        return None
+    return n if n >= 0 else None
+
+
+def fetch_youtube(
+    channel_id: str | None,
+    handle: str | None,
+    key: str | None,
+    session: requests.Session | None = None,
+) -> SourceResult:
+    """Channel-level statistics from the YouTube Data API (channels.list).
+
+    API key only, no OAuth; one quota unit per call. The key travels in the
+    ``X-Goog-Api-Key`` header, not the URL, and is scrubbed from any error
+    text, so it never lands in warnings or benchmark.json.
+
+    Returns None data (with a warning) when the key is absent. A channel
+    that hides its subscriber count yields ``subscriber_count`` None, never 0.
+    """
+    res = SourceResult(fetched_at=_now_iso())
+    label = channel_id or handle
+    if not label:
+        return res
+    if not key:
+        res.warnings.append(f"youtube: skipped for {label} (YOUTUBE_API_KEY unset)")
+        return res
+
+    params = {"part": "snippet,statistics"}
+    if channel_id:
+        params["id"] = channel_id
+    else:
+        params["forHandle"] = handle
+    sess = session or requests
+    try:
+        resp = sess.get(
+            YOUTUBE_CHANNELS_URL,
+            params=params,
+            headers={"User-Agent": USER_AGENT, "X-Goog-Api-Key": key},
+            timeout=DEFAULT_TIMEOUT,
+        )
+        resp.raise_for_status()
+        payload = resp.json()
+    except Exception as exc:  # noqa: BLE001 - degrade, never crash
+        res.warnings.append(_redact(f"youtube: lookup for {label} failed: {exc}", key))
+        return res
+
+    items = payload.get("items") or []
+    if not items:
+        res.warnings.append(f"youtube: no channel found for {label}")
+        return res
+
+    item = items[0]
+    stats = item.get("statistics") or {}
+    hidden = bool(stats.get("hiddenSubscriberCount"))
+    res.data = {
+        "channel_id": item.get("id"),
+        "title": (item.get("snippet") or {}).get("title"),
+        "subscriber_count": None if hidden else _count(stats.get("subscriberCount")),
+        "hidden_subscriber_count": hidden,
+        "view_count": _count(stats.get("viewCount")),
+        "video_count": _count(stats.get("videoCount")),
+    }
+    if hidden:
+        res.warnings.append(f"youtube: {label} hides its subscriber count (N/A)")
     return res
 
 

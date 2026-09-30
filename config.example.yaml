@@ -6,6 +6,9 @@ subject:
   name: Chain of Thought
   feed_url: https://feeds.transistor.fm/chain-of-thought
   apple_id: 1776879655
+  # Optional YouTube channel (needs YOUTUBE_API_KEY), either form:
+  # youtube_channel_id: UCxxxxxxxxxxxxxxxxxxxxxx
+  # youtube_handle: "@yourhandle"
 
 peers:
   - name: Latent Space

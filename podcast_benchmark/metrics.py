@@ -136,3 +136,19 @@ def catalog_depth(apple_data: dict | None, pi_data: dict | None) -> int | None:
     if pi_data and pi_data.get("episode_count"):
         return pi_data["episode_count"]
     return None
+
+
+def youtube_metrics(yt_data: dict | None) -> dict[str, int | None]:
+    """Channel totals from YouTube. All None when the channel wasn't fetched."""
+    yt = yt_data or {}
+    return {
+        "youtube_subscribers": yt.get("subscriber_count"),
+        "youtube_total_views": yt.get("view_count"),
+        "youtube_video_count": yt.get("video_count"),
+    }
+
+
+def subscriber_count_is_rounded(count: int | None) -> bool:
+    """YouTube rounds public subscriber counts to three significant figures
+    once a channel passes 1,000, so those values are approximate."""
+    return count is not None and count >= 1000

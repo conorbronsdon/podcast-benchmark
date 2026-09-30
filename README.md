@@ -33,6 +33,7 @@ All of these come from public sources. None of them are estimated or invented.
 - Feed hygiene: a four-point checklist read from the RSS channel: artwork (`itunes:image` or `image`), at least one `itunes:category`, a `podcast:funding` tag, and `podcast:locked` with the value `yes`. N/A when the feed could not be fetched or parsed.
 - Days since last episode: recency, from the newest non-future feed pubdate.
 - Apple rating count and average: read if Apple exposes them. See the limitations section. Today they come back as N/A.
+- YouTube channel totals (optional): subscribers, total views, and video count from the YouTube Data API, for shows with a configured channel. Views are exact and ranked. Subscriber counts are rounded by YouTube to three significant figures above 1,000, so the report marks them with `~` and does not rank them. A hidden subscriber count is N/A, never 0. These are channel totals, so a channel that also posts non-podcast videos counts those too.
 
 ## What it deliberately does NOT do
 
@@ -98,15 +99,32 @@ $env:PODCASTINDEX_API_SECRET = "your-secret"
 
 Get a free key at api.podcastindex.org. Without these the tool still runs and falls back to Apple plus the raw RSS feed.
 
+### YouTube (optional)
+
+For shows with a `youtube_channel_id` or `youtube_handle` in the config, the tool reads channel statistics from the YouTube Data API (`channels.list`, one quota unit per show against the default 10,000 a day). It needs an API key only, no OAuth:
+
+```bash
+export YOUTUBE_API_KEY=your-key
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:YOUTUBE_API_KEY = "your-key"
+```
+
+Create a key in Google Cloud with the YouTube Data API v3 enabled. The key is sent in a request header, never the URL, and is kept out of warnings and `benchmark.json`. Without it, YouTube columns show N/A and the run warns once per configured channel.
+
 ## Config format
 
-A small YAML file with one subject and a list of peers. Each show needs a name and a feed URL. An Apple ID is optional but unlocks catalog depth and genre.
+A small YAML file with one subject and a list of peers. Each show needs a name and a feed URL. An Apple ID is optional but unlocks catalog depth and genre. A YouTube channel is optional too: set either `youtube_channel_id` (starts with `UC`) or `youtube_handle` (quote it, since YAML reserves a leading `@`, or leave the `@` off).
 
 ```yaml
 subject:
   name: Chain of Thought
   feed_url: https://feeds.transistor.fm/chain-of-thought
   apple_id: 1776879655
+  youtube_handle: "@yourhandle"   # optional
 
 peers:
   - name: Latent Space

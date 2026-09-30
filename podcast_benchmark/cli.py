@@ -78,7 +78,9 @@ def main(argv: list[str] | None = None) -> int:
     pi_key = os.environ.get("PODCASTINDEX_API_KEY")
     pi_secret = os.environ.get("PODCASTINDEX_API_SECRET")
 
-    doc = build_benchmark(config, pi_key=pi_key, pi_secret=pi_secret)
+    yt_key = os.environ.get("YOUTUBE_API_KEY")
+
+    doc = build_benchmark(config, pi_key=pi_key, pi_secret=pi_secret, yt_key=yt_key)
     json_path, md_path = write_outputs(doc, args.out_dir)
 
     print(f"wrote {json_path}")
