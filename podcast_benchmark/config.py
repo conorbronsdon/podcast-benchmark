@@ -50,6 +50,13 @@ class Show:
             apple_id = int(apple_id)
         yt_id = d.get("youtube_channel_id")
         yt_handle = d.get("youtube_handle")
+        if yt_handle not in (None, "") and not isinstance(yt_handle, str):
+            # YAML turns unquoted off/yes/0x1f/0123 into a bool or a different
+            # number, which would select another channel; insist on a string.
+            raise ValueError(
+                f"config: {where} ('{name}') youtube_handle must be quoted "
+                f"(got {type(yt_handle).__name__} {yt_handle!r})"
+            )
         yt_id = str(yt_id).strip() if yt_id not in (None, "") else None
         yt_handle = str(yt_handle).strip() if yt_handle not in (None, "") else None
         if yt_id and yt_handle:

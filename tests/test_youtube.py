@@ -245,11 +245,23 @@ def test_config_accepts_handle_with_or_without_at():
         (f"  youtube_channel_id: {SUBJECT},{PEER}", "one channel ID"),
         ('  youtube_handle: "@a b"', "not a single handle"),
         ('  youtube_handle: "@a,@b"', "not a single handle"),
+        ("  youtube_handle: 12345", "must be quoted"),
     ],
 )
 def test_config_rejects_ambiguous_or_malformed_channels(extra, message):
     with pytest.raises(ValueError, match=message):
         parse_config(BASE.format(extra=extra))
+
+
+def test_config_rejects_yaml_coerced_handles():
+    from podcast_benchmark.config import Show
+
+    for value in (False, True, 2748):
+        with pytest.raises(ValueError, match="must be quoted"):
+            Show.from_dict({"name": "S", "feed_url": "u", "youtube_handle": value}, "subject")
+    assert Show.from_dict(
+        {"name": "S", "feed_url": "u", "youtube_handle": "12345"}, "subject"
+    ).youtube_handle == "@12345"
 
 
 def test_config_without_youtube_is_unchanged():
