@@ -12,7 +12,7 @@ from . import __version__
 from .config import BenchmarkConfig, Show
 from . import metrics as M
 from .ranking import rank_by
-from .sources import fetch_apple, fetch_podcastindex, fetch_rss
+from .sources import fetch_apple, fetch_podcastindex, fetch_rss, fetch_youtube
 
 NA = "N/A"
 
@@ -27,6 +27,7 @@ def collect_show(
     pi_secret: str | None,
     session: requests.Session | None = None,
     now: datetime | None = None,
+    yt_key: str | None = None,
 ) -> dict[str, Any]:
     """Fetch all sources for one show and compute its metrics."""
     warnings: list[str] = []
@@ -50,6 +51,13 @@ def collect_show(
     warnings.extend(f"[{show.name}] {w}" for w in rr.warnings)
     rss = rr.data
     sources_meta["rss"] = {"fetched_at": rr.fetched_at, "ok": rr.ok}
+
+    youtube = None
+    if show.youtube_channel_id or show.youtube_handle:
+        yr = fetch_youtube(show.youtube_channel_id, show.youtube_handle, yt_key, session=session)
+        warnings.extend(f"[{show.name}] {w}" for w in yr.warnings)
+        youtube = yr.data
+        sources_meta["youtube"] = {"fetched_at": yr.fetched_at, "ok": yr.ok}
 
     # When the RSS fetch/parse failed entirely, feed-derived metrics must be
     # N/A (None), never zeros: a 0/4 hygiene score or 0-item feed would be
@@ -79,13 +87,16 @@ def collect_show(
         "hygiene": checklist,
         "hygiene_score": M.hygiene_score(checklist) if checklist is not None else None,
         "feed_items_seen": rss.get("item_count_in_feed", 0) if rss_ok else None,
+        **M.youtube_metrics(youtube),
     }
 
     return {
         "name": show.name,
         "feed_url": show.feed_url,
         "apple_id": show.apple_id,
-        "raw": {"apple": apple, "podcastindex": pi, "rss": rss},
+        "youtube_channel_id": show.youtube_channel_id,
+        "youtube_handle": show.youtube_handle,
+        "raw": {"apple": apple, "podcastindex": pi, "rss": rss, "youtube": youtube},
         "sources_meta": sources_meta,
         "metrics": computed,
         "warnings": warnings,
@@ -98,6 +109,7 @@ def build_benchmark(
     pi_secret: str | None = None,
     session: requests.Session | None = None,
     now: datetime | None = None,
+    yt_key: str | None = None,
 ) -> dict[str, Any]:
     """Fetch and compute for every show. Returns the full benchmark document."""
     sess = session or requests.Session()
@@ -105,7 +117,7 @@ def build_benchmark(
         sess.headers.update({"Accept": "application/json, application/xml, */*"})
 
     shows = [
-        collect_show(s, pi_key, pi_secret, session=sess, now=now)
+        collect_show(s, pi_key, pi_secret, session=sess, now=now, yt_key=yt_key)
         for s in config.all_shows
     ]
     all_warnings: list[str] = []
@@ -123,6 +135,9 @@ def build_benchmark(
                 "Apple iTunes lookup API (https://itunes.apple.com/lookup)",
                 "Podcast Index API (https://api.podcastindex.org)",
                 "Direct RSS feed fetch",
+                "YouTube Data API channels.list statistics "
+                "(https://www.googleapis.com/youtube/v3/channels), for shows "
+                "with a configured channel",
             ],
             "cadence_window_days": M.CADENCE_WINDOW_DAYS,
             "notes": [
@@ -140,6 +155,11 @@ def build_benchmark(
                 "It is N/A when the feed could not be fetched or parsed.",
                 "Catalog depth uses Apple trackCount, falling back to "
                 "Podcast Index episodeCount.",
+                "YouTube figures are channel totals (every video on the "
+                "channel, not only podcast episodes). YouTube rounds public "
+                "subscriber counts to three significant figures above 1,000, "
+                "so those are shown with '~' and are not ranked; channel views "
+                "are exact and are ranked. A hidden subscriber count is N/A.",
                 "Downloads and chart positions are private/ToS-restricted and "
                 "are deliberately not collected.",
             ],
@@ -160,6 +180,17 @@ def _fmt(value: Any) -> str:
 
 def _metric(show: dict, key: str) -> Any:
     return show["metrics"].get(key)
+
+
+def _has_channel(show: dict) -> bool:
+    return bool(show.get("youtube_channel_id") or show.get("youtube_handle"))
+
+
+def _fmt_subscribers(count: Any) -> str:
+    """Qualify YouTube's rounded subscriber counts instead of implying precision."""
+    if count is None:
+        return NA
+    return f"~{count:,}" if M.subscriber_count_is_rounded(count) else str(count)
 
 
 def _ranking_block(
@@ -234,6 +265,9 @@ def render_markdown(doc: dict[str, Any]) -> str:
         "Hygiene /4",
         "Apple rating",
     ]
+    show_yt = any(_has_channel(s) for s in shows)
+    if show_yt:
+        headers += ["YouTube subs", "YouTube views"]
     out.append("| " + " | ".join(headers) + " |")
     out.append("| " + " | ".join(["----"] * len(headers)) + " |")
     for s in shows:
@@ -255,6 +289,12 @@ def render_markdown(doc: dict[str, Any]) -> str:
             hygiene_cell,
             rating_cell,
         ]
+        if show_yt:
+            views = m.get("youtube_total_views")
+            row += [
+                _fmt_subscribers(m.get("youtube_subscribers")),
+                NA if views is None else f"{views:,}",
+            ]
         out.append("| " + " | ".join(row) + " |")
     out.append("")
     out.append(
@@ -264,6 +304,13 @@ def render_markdown(doc: dict[str, Any]) -> str:
         "from cadence ranking."
     )
     out.append("")
+    if show_yt:
+        out.append(
+            "YouTube subscriber counts are rounded by YouTube to three "
+            "significant figures above 1,000 (shown with `~`), so they are not "
+            "ranked. YouTube figures are channel totals, not podcast-only."
+        )
+        out.append("")
 
     # Rankings.
     out.append("## Rankings")
@@ -321,6 +368,27 @@ def render_markdown(doc: dict[str, Any]) -> str:
             subject_name,
         )
     )
+
+    if show_yt:
+        out.extend(
+            _ranking_block(
+                "YouTube channel views (all videos on the channel)",
+                rank_by(
+                    [s for s in shows if _has_channel(s)],
+                    lambda s: _metric(s, "youtube_total_views"),
+                ),
+                "",
+                subject_name,
+            )
+        )
+        no_channel = [s["name"] for s in shows if not _has_channel(s)]
+        if no_channel:
+            out.append(
+                "No YouTube channel configured (not ranked): "
+                + ", ".join(no_channel)
+                + "."
+            )
+            out.append("")
 
     # Findings: computable facts only.
     out.append("## Findings")
@@ -424,6 +492,24 @@ def _findings(doc: dict[str, Any]) -> list[str]:
     if sm["days_since_last_episode"] is not None:
         lines.append(
             f"- Days since last episode: {sm['days_since_last_episode']}."
+        )
+
+    # YouTube.
+    views = sm.get("youtube_total_views")
+    if views is not None:
+        r = rank_of(lambda s: s["metrics"].get("youtube_total_views"))
+        subs = sm.get("youtube_subscribers")
+        if subs is None and sm.get("youtube_subscribers_hidden"):
+            subs_txt = "hidden by the channel"
+        elif subs is None:
+            subs_txt = NA
+        elif M.subscriber_count_is_rounded(subs):
+            subs_txt = f"about {subs:,} (rounded by YouTube)"
+        else:
+            subs_txt = f"{subs:,}"
+        lines.append(
+            f"- YouTube channel: {views:,} total views, ranked {r[0]} of {r[1]} "
+            f"shows with channel data; subscribers {subs_txt}."
         )
 
     # Ratings caveat.

@@ -8,6 +8,7 @@ a tiny hand-rolled parser rather than pulling in PyYAML. The accepted shape:
       name: Chain of Thought
       feed_url: https://feeds.transistor.fm/chain-of-thought
       apple_id: 1776879655   # optional
+      youtube_channel_id: UC...   # optional; or youtube_handle: "@handle"
 
     peers:
       - name: Latent Space
@@ -21,6 +22,7 @@ built-in mini-parser handles this exact structure.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Any
 
@@ -30,6 +32,10 @@ class Show:
     name: str
     feed_url: str
     apple_id: int | None = None
+    # Optional YouTube channel, as a channel ID ("UC...") or a handle ("@name").
+    # Nothing in RSS points at a show's channel, so it has to be configured.
+    youtube_channel_id: str | None = None
+    youtube_handle: str | None = None
 
     @classmethod
     def from_dict(cls, d: dict[str, Any], where: str) -> "Show":
@@ -42,7 +48,42 @@ class Show:
         apple_id = d.get("apple_id")
         if apple_id is not None:
             apple_id = int(apple_id)
-        return cls(name=str(name), feed_url=str(feed_url), apple_id=apple_id)
+        yt_id = d.get("youtube_channel_id")
+        yt_handle = d.get("youtube_handle")
+        if yt_handle not in (None, "") and not isinstance(yt_handle, str):
+            # YAML turns unquoted off/yes/0x1f/0123 into a bool or a different
+            # number, which would select another channel; insist on a string.
+            raise ValueError(
+                f"config: {where} ('{name}') youtube_handle must be quoted "
+                f"(got {type(yt_handle).__name__} {yt_handle!r})"
+            )
+        yt_id = str(yt_id).strip() if yt_id not in (None, "") else None
+        yt_handle = str(yt_handle).strip() if yt_handle not in (None, "") else None
+        if yt_id and yt_handle:
+            raise ValueError(
+                f"config: {where} ('{name}') sets both youtube_channel_id and "
+                "youtube_handle; use one"
+            )
+        if yt_id and not re.fullmatch(r"UC[A-Za-z0-9_-]{22}", yt_id):
+            raise ValueError(
+                f"config: {where} ('{name}') youtube_channel_id should be one "
+                "channel ID ('UC' plus 22 characters); use youtube_handle for "
+                "an @handle"
+            )
+        if yt_handle and not yt_handle.startswith("@"):
+            yt_handle = "@" + yt_handle
+        if yt_handle and not re.fullmatch(r"@[^\s,/?#&@\x00-\x1f\x7f]{1,100}", yt_handle):
+            raise ValueError(
+                f"config: {where} ('{name}') youtube_handle {yt_handle!r} is not "
+                "a single handle (no spaces or separators)"
+            )
+        return cls(
+            name=str(name),
+            feed_url=str(feed_url),
+            apple_id=apple_id,
+            youtube_channel_id=yt_id,
+            youtube_handle=yt_handle,
+        )
 
 
 @dataclass
