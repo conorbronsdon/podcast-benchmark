@@ -14,6 +14,7 @@ as warnings rather than silent gaps. Nothing here invents numbers.
 from __future__ import annotations
 
 import hashlib
+import math
 import re
 import time
 from dataclasses import dataclass, field
@@ -370,7 +371,8 @@ def _parse_duration(text: str | None) -> int | None:
     """Parse itunes:duration to seconds.
 
     Accepts bare seconds ("3600", "3600.5") and colon forms MM:SS / HH:MM:SS
-    (fractional seconds tolerated). Negative or malformed values return None.
+    (fractional seconds tolerated). Negative, non-finite ("NaN", "inf") or
+    malformed values return None.
     """
     if not text:
         return None
@@ -385,7 +387,7 @@ def _parse_duration(text: str | None) -> int | None:
             nums = [float(p) for p in parts]
         except ValueError:
             return None
-        if any(n < 0 for n in nums):
+        if any(n < 0 or not math.isfinite(n) for n in nums):
             return None
         seconds = 0.0
         for n in nums:
@@ -395,7 +397,7 @@ def _parse_duration(text: str | None) -> int | None:
         value = float(text)
     except ValueError:
         return None
-    if value < 0:
+    if value < 0 or not math.isfinite(value):
         return None
     return int(value)
 

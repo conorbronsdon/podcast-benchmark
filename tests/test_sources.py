@@ -25,6 +25,11 @@ from podcast_benchmark.sources import _parse_duration, parse_rss_bytes
         ("-30", None),  # negative durations are junk, not data
         ("-1:30", None),
         ("12:xx", None),
+        # Non-finite values parse as floats but are not durations.
+        ("NaN", None),
+        ("NaN:NaN:NaN", None),
+        ("inf", None),
+        ("1:inf", None),
     ],
 )
 def test_parse_duration(text, expected):
@@ -89,6 +94,33 @@ def test_html_error_page_raises():
     html = b"<html><head><title>503</title></head><body>Service Unavailable</body></html>"
     with pytest.raises(Exception):
         parse_rss_bytes(html)  # no <channel> element
+
+
+NAN_DURATION_FEED = b"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>NaN Duration Show</title>
+    <item>
+      <title>Ep 2</title>
+      <pubDate>Mon, 02 Nov 2026 10:00:00 +0000</pubDate>
+      <itunes:duration>NaN:NaN:NaN</itunes:duration>
+    </item>
+    <item>
+      <title>Ep 1</title>
+      <pubDate>Mon, 26 Oct 2026 10:00:00 +0000</pubDate>
+      <itunes:duration>00:30:00</itunes:duration>
+    </item>
+  </channel>
+</rss>"""
+
+
+def test_nan_duration_is_na_not_a_feed_failure():
+    """One episode with a generator-bug 'NaN' duration must not fail the
+    whole feed parse (which would turn every feed metric N/A). That episode
+    gets no duration; the others keep theirs."""
+    data = parse_rss_bytes(NAN_DURATION_FEED)
+    assert data["item_count_in_feed"] == 2
+    assert [e["duration_sec"] for e in data["episodes"]] == [None, 1800]
 
 
 def test_no_channel_raises():
