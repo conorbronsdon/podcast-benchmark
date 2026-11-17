@@ -22,7 +22,11 @@ A command-line tool that compares a podcast against a set of peers using only pu
 
 It was built to generate the data half of a citable benchmark report for the [Chain of Thought](https://chainofthought.show/?utm_source=github&utm_medium=referral&utm_campaign=repo-readme&utm_content=podcast-benchmark) podcast, but it works for any show. Point it at a config that lists your podcast and a peer set, and it does the rest. If you run a podcast and want an honest read on where you stand, this is for you.
 
-## What it measures
+## Scope
+
+The benchmark compares public signals that anyone can check: what a show's feed, Apple's lookup API, Podcast Index, and (optionally) YouTube publish about it. It answers "how does this show's catalog, cadence, and feed compare with its peers?" It does not answer "how many people listen?", because no public source has that number.
+
+### What it measures
 
 All of these come from public sources. None of them are estimated or invented.
 
@@ -33,9 +37,15 @@ All of these come from public sources. None of them are estimated or invented.
 - Feed hygiene: a four-point checklist read from the RSS channel: artwork (`itunes:image` or `image`), at least one `itunes:category`, a `podcast:funding` tag, and `podcast:locked` with the value `yes`. N/A when the feed could not be fetched or parsed.
 - Days since last episode: recency, from the newest non-future feed pubdate.
 - Apple rating count and average: read if Apple exposes them. See the limitations section. Today they come back as N/A.
-- YouTube channel totals (optional): subscribers, total views, and video count from the YouTube Data API, for shows with a configured channel. Views are exact and ranked. Subscriber counts are rounded by YouTube to three significant figures above 1,000, so the report marks them with `~` and does not rank them. A hidden subscriber count is N/A, never 0. These are channel totals, so a channel that also posts non-podcast videos counts those too.
+- YouTube channel totals (optional): subscribers, total views, and video count from the YouTube Data API, for shows with a configured channel. Views are exact and ranked. Subscriber counts are rounded by YouTube to three significant figures above 1,000, so the report marks them with `~` and does not rank them. A hidden subscriber count is N/A, never 0. Video count is recorded in `benchmark.json` but not shown in the report. These are channel totals, so a channel that also posts non-podcast videos counts those too.
 
-## What it deliberately does NOT do
+### What gets ranked
+
+The report ranks catalog depth, publishing cadence, transcript availability, feed hygiene, Apple rating count, and YouTube channel views. Average duration, days since last episode, and YouTube subscribers appear in the overview table but are not ranked. YouTube views are ranked only among shows with a configured channel; the others are listed as not configured.
+
+A show with no value for a metric is listed as excluded from that ranking. A cadence computed from a possibly truncated feed is shown in the overview with `*` and excluded from the cadence ranking. When no show has data for a metric, as with Apple ratings today, the ranking is omitted and the report says so.
+
+### What it deliberately does NOT do
 
 - It does not estimate or report download numbers. Downloads are private data. No public source has them, and guessing would make the report worthless.
 - It does not scrape Apple Podcasts charts or Spotify. That is brittle and against their terms. Chart rank is out of scope.
@@ -43,31 +53,45 @@ All of these come from public sources. None of them are estimated or invented.
 
 The report leads with a sentence saying it benchmarks public signals, not downloads, so a reader is never misled about what the numbers mean.
 
-## What this can't see, and what can
+### What this can't see, and what can
 
-This tool benchmarks the layer where public data is real: catalog shape, publishing cadence, episode length, transcript coverage, and feed hygiene. Prefer ratios and patterns over invented magnitudes. Publishing frequency and median length can reveal a show's strategy without claiming to know its downloads.
+This tool benchmarks the layer where public data is real: catalog shape, publishing cadence, episode length, transcript coverage, feed hygiene, and public YouTube channel totals. Prefer ratios and patterns over invented magnitudes. Publishing frequency and average episode length can reveal a show's strategy without claiming to know its downloads.
 
-Owner-side analytics are the private complement to this public benchmark:
+Owner-side analytics are the complement to this public benchmark. They answer the audience questions this tool won't, but only for shows you have access to, so none of them can benchmark an arbitrary peer set:
 
-- [op3-mcp](https://github.com/conorbronsdon/op3-mcp) reads a show's own download, geography, and app analytics from OP3.
+- [op3-mcp](https://github.com/conorbronsdon/op3-mcp) reads download, geography, and app-share analytics from OP3. Data exists only for shows whose feeds route through the OP3 prefix.
 - [apple-podcasts-mcp](https://github.com/conorbronsdon/apple-podcasts-mcp) targets owner analytics from Apple Podcasts Reporter. It requires a paid Apple Podcasters Program membership, and the repository has not yet been checked against a live Apple account.
+- [yt-analytics-mcp](https://github.com/conorbronsdon/yt-analytics-mcp) reads owner-side YouTube Analytics (watch time, retention, traffic sources) for channels you own. It needs an OAuth credential for that channel, not the API key this tool uses.
 - [Transistor](https://transistor.fm/) gives its hosting customers private show and episode analytics.
 
 ## Install
 
-Requires Python 3.11 or newer.
+Requires Python 3.11 or newer. The package is not on PyPI, so install it from GitHub. Either command puts a `podcast-benchmark` command on your PATH:
 
 ```bash
-pip install -r requirements.txt
+pipx install git+https://github.com/conorbronsdon/podcast-benchmark
+# or, inside a virtual environment:
+pip install git+https://github.com/conorbronsdon/podcast-benchmark
 ```
 
-`requests` is the only hard dependency. RSS parsing uses the standard library. Config parsing uses a small built-in YAML reader, so PyYAML is optional. Install it (`pip install PyYAML`) if you want a more robust parser.
+To work from a clone (needed to run the tests, and the easiest way to get `config.example.yaml`):
+
+```bash
+git clone https://github.com/conorbronsdon/podcast-benchmark
+cd podcast-benchmark
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -e ".[dev]"
+```
+
+`requests` is the only hard dependency. RSS parsing uses the standard library. Config parsing uses a small built-in YAML reader, so PyYAML is optional. Add the `yaml` extra (`pip install -e ".[yaml]"`, or `pip install "podcast-benchmark[yaml] @ git+https://github.com/conorbronsdon/podcast-benchmark"`) if you want a more robust parser.
 
 ## Usage
 
 ```bash
-python -m podcast_benchmark.cli config.example.yaml -o output
+podcast-benchmark config.example.yaml -o output
 ```
+
+`python -m podcast_benchmark.cli` is the same command, for running from a clone without installing. A non-editable install does not include `config.example.yaml`; copy it from the repository or write your own (see [Config format](#config-format)).
 
 This writes `output/benchmark.json` and `output/report.md`. Any source that fails for a show degrades to N/A and is listed in a warnings section, never dropped silently.
 
@@ -76,7 +100,7 @@ This writes `output/benchmark.json` and `output/report.md`. Any source that fail
 `benchmark.json` contains everything the report needs, so `report.md` can be re-rendered without touching the network:
 
 ```bash
-python -m podcast_benchmark.cli --from-json output/benchmark.json -o output
+podcast-benchmark --from-json output/benchmark.json -o output
 ```
 
 This is the reproducibility path: anyone holding the JSON can regenerate the exact report, and rendering changes can be re-applied to old runs without refetching.
@@ -171,6 +195,8 @@ The JSON is the source of record. A reports page can read `benchmark.json` direc
 
 ## Tests
 
+From a clone with the `dev` extra installed (see [Install](#install)):
+
 ```bash
 python -m pytest
 ```
@@ -189,6 +215,7 @@ Companion tools:
 
 - [op3-mcp](https://github.com/conorbronsdon/op3-mcp): your own download, geography, and app analytics through OP3, the part this benchmark deliberately leaves out.
 - [apple-podcasts-mcp](https://github.com/conorbronsdon/apple-podcasts-mcp) *(paid Apple Podcasters Program membership required; not yet checked against a live Apple account)*: owner-side Apple Podcasts Reporter analytics.
+- [yt-analytics-mcp](https://github.com/conorbronsdon/yt-analytics-mcp) *(OAuth credential for a channel you own)*: owner-side YouTube Analytics, the private side of the YouTube columns here.
 - [podcastindex-mcp](https://github.com/conorbronsdon/podcastindex-mcp): the Podcast Index MCP server, the same API this tool uses to corroborate episode counts.
 - [ai-tools-for-creators](https://github.com/conorbronsdon/ai-tools-for-creators): a curated list of AI skills and MCP servers for people who ship ideas for a living.
 
