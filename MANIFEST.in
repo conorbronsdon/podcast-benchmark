@@ -1,0 +1,4 @@
+include config.example.yaml
+include requirements.txt
+recursive-include tests *.py *.xml
+recursive-include example-output *.json *.md
